@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/Charts/Bars/index.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">src/Charts/Bars/index.js</span></h1>
+    <h2>
+        Statements: <span class="metric">100% <small>(84 / 84)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">96.15% <small>(25 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(14 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(28 / 28)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric">3 statements, 10 branches</span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">src/Charts/Bars/</a> &#187; index.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
+&nbsp;
+import React, { Component, PropTypes } from 'react';
+import { Size } from '../../PropTypes';
+import { decorate as mixin } from 'react-mixin';
+import BucketData from '../Mixins/BucketData';
+import Rect from '../Primitives/Rect';
+&nbsp;
+import d3 from 'd3';
+&nbsp;
+@mixin(BucketData)
+class <span class="branch-1 cbranch-no" title="branch not covered" >Bars </span>extends Component {
+    static propTypes = {
+        width: Size,
+        height: Size,
+        data: PropTypes.array.isRequired
+    };
+    renderBars() {
+        let bars = [];
+        const p = this.percent;
+        const { outerPadding, padding } = this.context;
+        const validBuckets = this.getValidBuckets();
+        const valueKeys = Object.keys(validBuckets[0]).filter(key =&gt; key !== '_label');
+        const facetCount = valueKeys.length;
+        const bucketX = this.getBucketScale();
+        const bucketSize = bucketX.rangeBand();
+        const vals = this.getValues();
+        const { ht, y } = this.buildVerticalScales();
+        const color = d3.scale.category20().domain(d3.range(facetCount));
+        validBuckets.forEach((bucket, i) =&gt; {
+            const currentBucketX = bucketX(i);
+            const barX = d3.scale.ordinal()
+                .domain(d3.range(facetCount))
+                .rangeBands([currentBucketX, currentBucketX + bucketSize], padding, outerPadding);
+            const barWidth = barX.rangeBand();
+            valueKeys.forEach((key, j) =&gt; {
+                const barKey = `${key}_${i}`;
+                const animationOffset = 750 / vals.length;
+                bars.push((
+                    &lt;Rect key={barKey}
+                        x={p(barX(j))}
+                        width={p(barWidth)}
+                        height={p(ht(bucket[key]))}
+                        y={p(y(bucket[key]))}
+                        fill={color(j)}
+                        animationDuration={750}
+                        animationDelay={bars.length * animationOffset}
+                        /&gt;
+                ));
+            });
+        });
+        return bars;
+    }
+    render() {
+        const p = this.percent;
+        const contentHeight = 100 - 50 * (this.context.padding + this.context.outerPadding);
+        return (
+            &lt;g&gt;
+                &lt;clipPath id="bars-mask"&gt;
+                    &lt;rect x="0" y="0" width="100%" height={p(contentHeight)} /&gt;
+                &lt;/clipPath&gt;
+                &lt;g clipPath="url(#bars-mask)"&gt;
+                    {this.renderBars()}
+                &lt;/g&gt;
+            &lt;/g&gt;
+        );
+    }
+    buildVerticalScales() {
+        const vals = this.getValues();
+        const yExtents = this.buildYExtents();
+        const ht = d3.scale.linear().domain(this.paddedExtent(vals)).clamp(true)
+            .range(yExtents);
+        const y = ht.copy().range(yExtents.reverse());
+        return { ht, y };
+    }
+    static contextTypes = {
+        padding: PropTypes.number.isRequired,
+        outerPadding: PropTypes.number.isRequired
+    }
+}
+&nbsp;
+export default Bars;
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Sep 28 2015 09:26:04 GMT-0500 (CDT)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

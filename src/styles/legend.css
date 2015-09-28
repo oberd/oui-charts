@@ -1,0 +1,12 @@
+.legend {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+.legend-color {
+    width: 1em;
+    height: 1em;
+}
+.legend-label {
+    padding: 0 0.4em;
+}
