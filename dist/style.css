@@ -1,0 +1,37 @@
+.Styles__flex-row___3rd6t {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.Styles__flex___1puDb {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+}
+.Legend__legend___1XjH4 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+    -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+}
+.Legend__legend-color___5zkAO {
+    width: 1em;
+    height: 1em;
+}
+.Legend__legend-label___1i1Zf {
+    padding: 0 0.4em;
+}
+
+/*# sourceMappingURL=style.css.map*/

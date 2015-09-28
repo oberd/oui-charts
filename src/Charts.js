@@ -1,4 +1,4 @@
-/*eslint block-scoped-var: 0*/
+/* eslint block-scoped-var: 0*/
 
 /* UI Layout Components */
 export Chart from './Charts/Chart';

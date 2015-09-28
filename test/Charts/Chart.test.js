@@ -1,7 +1,7 @@
 
 import { expect } from 'chai';
 import React, { Component } from 'react';
-import Chart from '../../src/Charts/Chart';
+import { Chart } from '../../dist/Charts';
 
 import { createRenderer } from 'react-addons-test-utils';
 

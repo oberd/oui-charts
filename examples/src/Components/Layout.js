@@ -11,7 +11,7 @@ export default class Layout extends Component {
                 <head>
                     <title>Oberd Charts</title>
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
-                    <link rel="stylesheet" type="text/css" href="/styles.css"/>
+                    <link rel="stylesheet" type="text/css" href="/style.css"/>
                 </head>
                 <body onClick={this.globalClick}>
                     <div className="flex-column z-background">

@@ -36,7 +36,7 @@ var Layout = (function (_Component) {
                     "Oberd Charts"
                 ),
                 _react2["default"].createElement("meta", { name: "viewport", content: "width=device-width, initial-scale=1" }),
-                _react2["default"].createElement("link", { rel: "stylesheet", type: "text/css", href: "/styles.css" })
+                _react2["default"].createElement("link", { rel: "stylesheet", type: "text/css", href: "/style.css" })
             ),
             _react2["default"].createElement(
                 "body",

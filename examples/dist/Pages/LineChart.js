@@ -16,21 +16,7 @@ var _AbstractExample2 = require('./AbstractExample');
 
 var _AbstractExample3 = _interopRequireDefault(_AbstractExample2);
 
-var _libChartsChart = require('../../../lib/Charts/Chart');
-
-var _libChartsChart2 = _interopRequireDefault(_libChartsChart);
-
-var _libChartsLines = require('../../../lib/Charts/Lines');
-
-var _libChartsLines2 = _interopRequireDefault(_libChartsLines);
-
-var _libChartsLegend = require('../../../lib/Charts/Legend');
-
-var _libChartsLegend2 = _interopRequireDefault(_libChartsLegend);
-
-var _libChartsAxisBucketX = require('../../../lib/Charts/Axis/BucketX');
-
-var _libChartsAxisBucketX2 = _interopRequireDefault(_libChartsAxisBucketX);
+var _distCharts = require('../../../dist/Charts');
 
 var LineChart = (function (_AbstractExample) {
     _inherits(LineChart, _AbstractExample);
@@ -46,12 +32,12 @@ var LineChart = (function (_AbstractExample) {
             'div',
             null,
             _react2['default'].createElement(
-                _libChartsChart2['default'],
+                _distCharts.Chart,
                 { width: '100%', height: '400' },
-                _react2['default'].createElement(_libChartsLines2['default'], { data: this.state.data }),
-                _react2['default'].createElement(_libChartsAxisBucketX2['default'], { data: this.state.data })
+                _react2['default'].createElement(_distCharts.Lines, { data: this.state.data }),
+                _react2['default'].createElement(_distCharts.BucketX, { data: this.state.data })
             ),
-            _react2['default'].createElement(_libChartsLegend2['default'], { data: this.state.data })
+            _react2['default'].createElement(_distCharts.Legend, { data: this.state.data })
         );
     };
 

@@ -3,25 +3,24 @@ import gulp from 'gulp';
 import gutil from 'gulp-util';
 import babel from 'gulp-babel';
 import nodemon from 'nodemon';
+import rimraf from 'rimraf';
 
 let examples;
 
-gulp.task('babel-examples', () =>
+gulp.task('clean-examples', (cb) => rimraf('./examples/dist', cb));
+gulp.task('babel-examples', ['clean-examples'], () =>
     gulp.src(['./examples/src/**/*.js'])
         .pipe(babel())
         .pipe(gulp.dest('./examples/dist/'))
 );
-
-gulp.task('babel-lib', () =>
-    gulp.src(['./src/**/*.js'])
-        .pipe(babel())
-        .pipe(gulp.dest('./lib/'))
+gulp.task('copy-styles', ['webpack'], () =>
+    gulp.src('./dist/style.css')
+        .pipe(gulp.dest('./examples/public/'))
 );
+gulp.task('restart-examples', ['babel-examples', 'webpack-examples', 'copy-styles'], () => examples.emit('restart'));
 
-gulp.task('restart-examples', ['babel-examples', 'babel-lib', 'webpack-examples'], () => examples.emit('restart'));
-
-gulp.task('examples', ['babel-examples', 'webpack-examples'], () => {
-    examples = nodemon({ ext: 'none', script: 'examples/dist/bin/run.js', 'watch': []})
+gulp.task('examples', ['babel-examples', 'webpack-examples', 'copy-styles'], () => {
+    examples = nodemon({ ext: 'none', script: 'examples/dist/bin/run.js', watch: []})
         .on('restart', () => gutil.log('restarting node...'));
     gulp.watch(['examples/src/**/*.js', 'src/**/*.js'], ['restart-examples']);
     gulp.watch('src/**/*.css', ['myth']);
@@ -29,7 +28,8 @@ gulp.task('examples', ['babel-examples', 'webpack-examples'], () => {
 
 import webpack from 'webpack-stream';
 import wpconfig from '@oberd/oui-webpack-config';
-gulp.task('webpack', ['myth'], () => {
+gulp.task('clean-dist', (cb) => rimraf('./dist', cb));
+gulp.task('webpack', ['clean-dist'], () => {
     const options = wpconfig({
         entry: {
             build: './src/Charts.js'
@@ -41,7 +41,7 @@ gulp.task('webpack', ['myth'], () => {
         },
         externals: [
             {
-                'react': {
+                react: {
                     root: 'React',
                     commonjs2: 'react',
                     commonjs: 'react',
@@ -59,7 +59,7 @@ gulp.task('webpack', ['myth'], () => {
                     commonjs: 'react-dom',
                     amd: 'react-dom'
                 },
-                'd3': {
+                d3: {
                     root: 'd3',
                     commonjs2: 'd3',
                     commonjs: 'd3',
@@ -73,7 +73,7 @@ gulp.task('webpack', ['myth'], () => {
         .pipe(gulp.dest('dist/'))
         .on('error', err => gutil.log(err));
 });
-gulp.task('webpack-examples', ['myth'], () => {
+gulp.task('webpack-examples', ['webpack'], () => {
     const config = wpconfig({
         entry: {
             build: './examples/src/client.js'
@@ -88,17 +88,6 @@ gulp.task('webpack-examples', ['myth'], () => {
         .pipe(gulp.dest('examples/public/'))
         .on('error', err => gutil.log(err));
 });
-
-
-import myth from 'gulp-myth';
-import concat from 'gulp-concat';
-gulp.task('myth', () =>
-    gulp.src('src/**/*.css')
-        .pipe(myth())
-        .pipe(concat('styles.css'))
-        .pipe(gulp.dest('dist'))
-        .pipe(gulp.dest('examples/public'))
-);
 
 import mocha from 'gulp-mocha';
 gulp.task('test', () => {

@@ -1,5 +1,7 @@
 
 import d3 from 'd3';
+import common from './Styles.css';
+import legend from './Legend.css';
 import React, { Component, PropTypes } from 'react';
 
 export default class Legend extends Component {
@@ -17,14 +19,15 @@ export default class Legend extends Component {
     }
     render() {
         const colorScale = this.getColorScale();
+        const cls = [common['flex-row'], legend.legend].join(' ');
         return (
-            <div className="flex-row legend">
-                {colorScale.map((series, i) => (
-                    <div className="legend flex-row" key={i}>
-                        <div className="legend-color" style={{ backgroundColor: series.color }} />
-                        <div className="legend-label flex">{series.label}</div>
+            <div className={common['flex-row']}>
+                {colorScale.map((series, i) =>
+                    <div className={cls} key={i}>
+                        <div className={legend['legend-color']} style={{ backgroundColor: series.color }} />
+                        <div className={legend['legend-label'] + ' ' + common.flex}>{series.label}</div>
                     </div>
-                ))}
+                )}
             </div>
         );
     }

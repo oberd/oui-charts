@@ -1,7 +1,7 @@
 
 import { expect } from 'chai';
 import React, { Component } from 'react';
-import Bars from '../../src/Charts/Bars';
+import { Bars } from '../../dist/Charts';
 import { getOutput } from '../helpers';
 
 describe('Bars', () => {

@@ -2,10 +2,7 @@
 
 import React from 'react';
 import AbstractExample from './AbstractExample';
-import Chart from '../../../lib/Charts/Chart';
-import Lines from '../../../lib/Charts/Lines';
-import Legend from '../../../lib/Charts/Legend';
-import Axis from '../../../lib/Charts/Axis/BucketX';
+import { Chart, Lines, Legend, BucketX as Axis } from '../../../dist/Charts';
 
 export default class LineChart extends AbstractExample {
     renderChart() {

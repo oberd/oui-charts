@@ -1,11 +1,7 @@
 
 import React from 'react';
 import AbstractExample from './AbstractExample';
-import Chart from '../../../lib/Charts/Chart';
-import Bars from '../../../lib/Charts/Bars';
-import Lines from '../../../lib/Charts/Lines';
-import Legend from '../../../lib/Charts/Legend';
-import Axis from '../../../lib/Charts/Axis/BucketX';
+import { Chart, Bars, Lines, Legend, BucketX as Axis } from '../../../dist/Charts';
 
 export default class BarAndLine extends AbstractExample {
     renderChart() {
