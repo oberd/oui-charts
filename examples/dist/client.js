@@ -1,7 +1,5 @@
 'use strict';
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -14,16 +12,18 @@ var _routes2 = _interopRequireDefault(_routes);
 
 var _reactRouter = require('react-router');
 
-var _historyLibCreateBrowserHistory = require('history/lib/createBrowserHistory');
+var _createBrowserHistory = require('history/lib/createBrowserHistory');
 
-var _historyLibCreateBrowserHistory2 = _interopRequireDefault(_historyLibCreateBrowserHistory);
+var _createBrowserHistory2 = _interopRequireDefault(_createBrowserHistory);
 
-var history = _historyLibCreateBrowserHistory2['default']();
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var history = (0, _createBrowserHistory2.default)();
 
 document.addEventListener('DOMContentLoaded', function () {
-    _reactDom.render(_react2['default'].createElement(
+    (0, _reactDom.render)(_react2.default.createElement(
         _reactRouter.Router,
         { history: history },
-        _routes2['default']
+        _routes2.default
     ), document);
 });

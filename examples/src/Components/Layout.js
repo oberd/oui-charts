@@ -1,7 +1,7 @@
 
 import React, { Component, PropTypes } from 'react';
 
-export default class Layout extends Component {
+class Layout extends Component {
     static propTypes = {
         children: PropTypes.any
     };
@@ -15,7 +15,7 @@ export default class Layout extends Component {
                 </head>
                 <body onClick={this.globalClick}>
                     <div className="flex-column z-background">
-                        {this.props.children.main}
+                        {this.props.main}
                     </div>
                     <script src="/build.js"></script>
                 </body>
@@ -23,3 +23,5 @@ export default class Layout extends Component {
         );
     }
 }
+
+export default Layout;

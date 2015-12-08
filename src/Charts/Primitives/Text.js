@@ -1,10 +1,9 @@
 
 import React, { Component, PropTypes } from 'react';
-import { decorate as mixin } from 'react-mixin';
+import reactMixin from 'react-mixin';
 import AnimatedPrimitive from '../Mixins/AnimatedPrimitive';
 
-@mixin(AnimatedPrimitive)
-export default class Rect extends Component {
+class Text extends Component {
     static propTypes = {
         animationDuration: PropTypes.number,
         animationDelay: PropTypes.number
@@ -21,3 +20,7 @@ export default class Rect extends Component {
         textAnchor: 'middle'
     }
 }
+
+reactMixin.onClass(Text, AnimatedPrimitive);
+
+export default Text;

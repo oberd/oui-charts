@@ -5,3 +5,8 @@
 .flex {
     flex: 1;
 }
+.flex-row-wrap {
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+}

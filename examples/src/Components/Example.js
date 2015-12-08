@@ -1,7 +1,7 @@
 
 import React, { Component, PropTypes } from 'react';
 
-export default class Example extends Component {
+class Example extends Component {
     static propTypes = {
         title: PropTypes.string,
         children: PropTypes.any,
@@ -19,3 +19,5 @@ export default class Example extends Component {
         );
     }
 }
+
+export default Example;

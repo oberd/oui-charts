@@ -1,4 +1,27 @@
-.Styles__flex-row___3rd6t {
+.Hover__hover___3j3DQ {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px;
+    word-wrap: break-word;
+    background: rgba(0,0,0,0.5);
+    padding: 0.9em;
+    border-left: 2px solid;
+    font-size: small;
+}
+.Hover__hover-attribute-label___2NMdZ {
+    display: block;
+}
+.Hover__hover-attribute-key___2b6z_ {
+    display: block;
+}
+.Hover__hover-attribute-value___UB5f8 {
+    margin-left: 1em;
+}
+.Chart__oui-chart___13MaY {
+    position: relative;
+}
+.Styles__flex-row___1RYyk {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -8,13 +31,26 @@
         -ms-flex-align: center;
             align-items: center;
 }
-.Styles__flex___1puDb {
+.Styles__flex___2apGr {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
         -ms-flex: 1;
             flex: 1;
 }
-.Legend__legend___1XjH4 {
+.Styles__flex-row-wrap___2TB5y {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+}
+.Legend__legend___10RPW {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -26,11 +62,11 @@
         -ms-flex-flow: row wrap;
             flex-flow: row wrap;
 }
-.Legend__legend-color___5zkAO {
+.Legend__legend-color____T8ud {
     width: 1em;
     height: 1em;
 }
-.Legend__legend-label___1i1Zf {
+.Legend__legend-label___3_RKO {
     padding: 0 0.4em;
 }
 

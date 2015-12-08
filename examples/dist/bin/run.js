@@ -1,11 +1,8 @@
 'use strict';
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+require('babel-core/register');
+require('babel-polyfill');
 
-require('babel-core/polyfill');
+var server = require('../').default;
 
-var _ = require('../');
-
-var _2 = _interopRequireDefault(_);
-
-_2['default'].listen(process.env.PORT || 9000);
+server.listen(process.env.PORT || 9000);

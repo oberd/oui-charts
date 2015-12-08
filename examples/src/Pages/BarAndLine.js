@@ -3,7 +3,7 @@ import React from 'react';
 import AbstractExample from './AbstractExample';
 import { Chart, Bars, Lines, Legend, BucketX as Axis } from '../../../dist/Charts';
 
-export default class BarAndLine extends AbstractExample {
+class BarAndLine extends AbstractExample {
     renderChart() {
         return (
             <div>
@@ -17,3 +17,5 @@ export default class BarAndLine extends AbstractExample {
         );
     }
 }
+
+export default BarAndLine;

@@ -1,12 +1,10 @@
 
 import React, { Component, PropTypes } from 'react';
-import { decorate as mixin } from 'react-mixin';
+import reactMixin from 'react-mixin';
 import BucketData from '../Mixins/BucketData';
 import Rect from '../Primitives/Rect';
 import Text from '../Primitives/Text';
 
-
-@mixin(BucketData)
 class BucketX extends Component {
     render() {
         const p = this.percent;
@@ -36,5 +34,7 @@ class BucketX extends Component {
         outerPadding: PropTypes.number.isRequired
     }
 }
+
+reactMixin.onClass(BucketX, BucketData);
 
 export default BucketX;

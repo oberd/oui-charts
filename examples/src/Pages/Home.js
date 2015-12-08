@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 
 import { Link } from 'react-router';
 
-export default class Home extends Component {
+class Home extends Component {
     static propTypes = {
 
     };
@@ -22,3 +22,5 @@ export default class Home extends Component {
         );
     }
 }
+
+export default Home;

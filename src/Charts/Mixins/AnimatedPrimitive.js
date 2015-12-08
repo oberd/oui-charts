@@ -4,7 +4,7 @@ import { findDOMNode } from 'react-dom';
 
 const AnimatedPrimitive = {
     shouldComponentUpdate(nextProps) {
-        let ignore = ['animationDuration', 'animationDelay'];
+        let ignore = ['animationDuration', 'animationDelay', 'hoverData', 'style'];
         const props = this.props;
         const changedKeys = Object.keys(this.props)
             .filter(prop => ignore.indexOf(prop) < 0)

@@ -4,7 +4,7 @@ import React from 'react';
 import AbstractExample from './AbstractExample';
 import { Chart, Lines, Legend, BucketX as Axis } from '../../../dist/Charts';
 
-export default class LineChart extends AbstractExample {
+class LineChart extends AbstractExample {
     renderChart() {
         return (
             <div>
@@ -17,3 +17,5 @@ export default class LineChart extends AbstractExample {
         );
     }
 }
+
+export default LineChart;

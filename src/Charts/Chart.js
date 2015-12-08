@@ -1,27 +1,63 @@
 
 import React, { Component, PropTypes } from 'react';
 import { Size, Children } from '../PropTypes';
+import Hover from './Hover';
+import styles from './Chart.css';
 
-export default class Chart extends Component {
+class Chart extends Component {
     static propTypes = {
         width: Size,
         height: Size,
         padding: PropTypes.number,
         outerPadding: PropTypes.number,
-        children: Children
+        children: Children,
+        hover: PropTypes.oneOfType([PropTypes.bool, PropTypes.func ])
     };
+    onClick() {
+        this.setState({ hover: false, activeElement: false });
+    }
     getChildContext() {
         const { padding, outerPadding } = this.props;
-        return { padding, outerPadding };
+        return {
+            padding,
+            outerPadding,
+            setHoverData: this.setHoverState.bind(this),
+            setActiveElement: this.setActiveElement.bind(this),
+            hasActiveElement: this.hasActiveElement.bind(this),
+            isActiveElement: this.hasActiveElement.bind(this),
+            activeElement: this.state.activeElement
+        };
+    }
+    renderHover() {
+        let out = <span />;
+        if (this.props.hover && this.state.hover) {
+            out = <div><Hover {...this.state.hover} /></div>;
+        }
+        return out;
     }
     render() {
         const { width, height, children } = this.props;
         return (
-            <svg width={width} height={height}>
-                {children}
-            </svg>
+            <div className={styles['oui-chart']}>
+                <svg width={width} height={height} onClick={this.onClick.bind(this)}>
+                    {children}
+                </svg>
+                {this.renderHover()}
+            </div>
         );
     }
+    setHoverState(data) {
+        if (!this.state.activeElement) {
+            this.setState({ hover: data });
+        }
+    }
+    setActiveElement(hoverKey, data) {
+        this.setState({ hover: data, activeElement: hoverKey });
+    }
+    hasActiveElement() {
+        return !!this.state.activeElement;
+    }
+    state = { hover: false, activeElement: false };
     static defaultProps = {
         padding: 0.1,
         outerPadding: 0.1,
@@ -30,6 +66,13 @@ export default class Chart extends Component {
     }
     static childContextTypes = {
         padding: PropTypes.number,
-        outerPadding: PropTypes.number
+        outerPadding: PropTypes.number,
+        setHoverData: PropTypes.func,
+        setActiveElement: PropTypes.func,
+        hasActiveElement: PropTypes.func,
+        isActiveElement: PropTypes.func,
+        activeElement: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
     }
 }
+
+export default Chart;

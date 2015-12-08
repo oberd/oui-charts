@@ -1,8 +1,8 @@
 'use strict';
 
-exports.__esModule = true;
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
 var _react = require('react');
 
@@ -10,32 +10,35 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouter = require('react-router');
 
-var _ComponentsLayout = require('./Components/Layout');
+var _Layout = require('./Components/Layout');
 
-var _ComponentsLayout2 = _interopRequireDefault(_ComponentsLayout);
+var _Layout2 = _interopRequireDefault(_Layout);
 
-var _PagesHome = require('./Pages/Home');
+var _Home = require('./Pages/Home');
 
-var _PagesHome2 = _interopRequireDefault(_PagesHome);
+var _Home2 = _interopRequireDefault(_Home);
 
-var _PagesBarChart = require('./Pages/BarChart');
+var _BarChart = require('./Pages/BarChart');
 
-var _PagesBarChart2 = _interopRequireDefault(_PagesBarChart);
+var _BarChart2 = _interopRequireDefault(_BarChart);
 
-var _PagesLineChart = require('./Pages/LineChart');
+var _LineChart = require('./Pages/LineChart');
 
-var _PagesLineChart2 = _interopRequireDefault(_PagesLineChart);
+var _LineChart2 = _interopRequireDefault(_LineChart);
 
-var _PagesBarAndLine = require('./Pages/BarAndLine');
+var _BarAndLine = require('./Pages/BarAndLine');
 
-var _PagesBarAndLine2 = _interopRequireDefault(_PagesBarAndLine);
+var _BarAndLine2 = _interopRequireDefault(_BarAndLine);
 
-exports['default'] = _react2['default'].createElement(
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var routes = _react2.default.createElement(
     _reactRouter.Route,
-    { path: '/', component: _ComponentsLayout2['default'] },
-    _react2['default'].createElement(_reactRouter.IndexRoute, { components: { main: _PagesHome2['default'] } }),
-    _react2['default'].createElement(_reactRouter.Route, { path: '/bar-chart', components: { main: _PagesBarChart2['default'] } }),
-    _react2['default'].createElement(_reactRouter.Route, { path: '/line-chart', components: { main: _PagesLineChart2['default'] } }),
-    _react2['default'].createElement(_reactRouter.Route, { path: '/bar-and-line', components: { main: _PagesBarAndLine2['default'] } })
+    { path: '/', component: _Layout2.default },
+    _react2.default.createElement(_reactRouter.IndexRoute, { components: { main: _Home2.default } }),
+    _react2.default.createElement(_reactRouter.Route, { path: '/bar-chart', components: { main: _BarChart2.default } }),
+    _react2.default.createElement(_reactRouter.Route, { path: '/line-chart', components: { main: _LineChart2.default } }),
+    _react2.default.createElement(_reactRouter.Route, { path: '/bar-and-line', components: { main: _BarAndLine2.default } })
 );
-module.exports = exports['default'];
+
+exports.default = routes;

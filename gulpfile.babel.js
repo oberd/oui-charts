@@ -27,54 +27,17 @@ gulp.task('examples', ['babel-examples', 'webpack-examples', 'copy-styles'], () 
 });
 
 import webpack from 'webpack-stream';
-import wpconfig from '@oberd/oui-webpack-config';
 gulp.task('clean-dist', (cb) => rimraf('./dist', cb));
 gulp.task('webpack', ['clean-dist'], () => {
-    const options = wpconfig({
-        entry: {
-            build: './src/Charts.js'
-        },
-        output: {
-            filename: 'Charts.js',
-            library: 'Charts',
-            libraryTarget: 'umd'
-        },
-        externals: [
-            {
-                react: {
-                    root: 'React',
-                    commonjs2: 'react',
-                    commonjs: 'react',
-                    amd: 'react'
-                },
-                'react-addons-transition-group': {
-                    root: 'React',
-                    commonjs2: 'react-addons-transition-group',
-                    commonjs: 'react-addons-transition-group',
-                    amd: 'react-addons-transition-group'
-                },
-                'react-dom': {
-                    root: 'ReactDOM',
-                    commonjs2: 'react-dom',
-                    commonjs: 'react-dom',
-                    amd: 'react-dom'
-                },
-                d3: {
-                    root: 'd3',
-                    commonjs2: 'd3',
-                    commonjs: 'd3',
-                    amd: 'd3'
-                }
-            }
-        ]
-    });
+    const options = require('./webpack.config');
     return gulp.src('./src/**/*.js')
         .pipe(webpack(options))
         .pipe(gulp.dest('dist/'))
         .on('error', err => gutil.log(err));
 });
 gulp.task('webpack-examples', ['webpack'], () => {
-    const config = wpconfig({
+    const options = require('./webpack.config');
+    const config = Object.assign({}, options, {
         entry: {
             build: './examples/src/client.js'
         },
@@ -121,7 +84,6 @@ gulp.task('test-watch', ['test'], () => {
     gulp.watch(['test/**/*.js', 'src/**/*.js'], ['test']);
 });
 
-gulp.task('default', ['webpack', 'myth'], () => {
+gulp.task('default', ['webpack'], () => {
     gulp.watch('src/**/*.js', ['webpack']);
-    gulp.watch('src/**/*.css', ['myth']);
 });

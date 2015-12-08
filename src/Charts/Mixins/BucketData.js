@@ -3,23 +3,33 @@ import d3 from 'd3';
 import { values, flatten, filter, some, omit } from 'underscore';
 
 const bucketData = {
-    getValidBuckets() {
-        const validBuckets = filter(this.props.data, bucket =>
-            some(bucket, (val, key) => val !== null && key !== '_label')
+    getValidBuckets(data) {
+        let dt = data || this.props.data;
+        const validBuckets = filter(dt, bucket =>
+            some(bucket, (val, key) => val !== null && !key.match(/^_/))
         );
         return validBuckets;
     },
-    getValues() {
-        const validBuckets = this.getValidBuckets();
-        let valueBuckets = validBuckets.map(bucket => omit(bucket, '_label'));
+    getValues(data) {
+        let dt = data || this.props.data;
+        const validBuckets = this.getValidBuckets(dt);
+        let valueBuckets = validBuckets.map(bucket => {
+            let out = {};
+            Object.keys(bucket)
+                .filter(k => !k.match(/^_/))
+                .forEach(k => out[k] = bucket[k]);
+            return out;
+        });
         return filter(flatten(valueBuckets.map(values)), val => val !== null);
     },
-    getValueKeys() {
-        const validBuckets = this.getValidBuckets();
-        return Object.keys(validBuckets[0]).filter(key => key !== '_label');
+    getValueKeys(data) {
+        let dt = data || this.props.data;
+        const validBuckets = this.getValidBuckets(dt);
+        return Object.keys(validBuckets[0]).filter(key => !key.match(/^_/));
     },
-    getBucketScale() {
-        const validBuckets = this.getValidBuckets();
+    getBucketScale(data) {
+        let dt = data || this.props.data;
+        const validBuckets = this.getValidBuckets(dt);
         const bucketCount = validBuckets.length;
         const { outerPadding, padding } = this.context;
         return d3.scale.ordinal()
@@ -42,12 +52,13 @@ const bucketData = {
     percent(input) {
         return input.toString() + '%';
     },
-    getColorScale() {
-        const valueKeys = this.getValueKeys();
+    getColorScale(data) {
+        let dt = data || this.props.data;
+        const valueKeys = this.getValueKeys(dt);
         return d3.scale.category20().domain(d3.range(valueKeys.length));
     },
     getBucketAverage(bucket) {
-        const vals = values(omit(bucket, '_label'));
+        const vals = values(omit(bucket, (val, key) => key.match(/^_/)));
         return d3.mean(vals);
     }
 };

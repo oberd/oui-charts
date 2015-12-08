@@ -1,6 +1,6 @@
+require('babel-core/register');
+require('babel-polyfill');
 
-import 'babel-core/polyfill';
-
-import server from '../';
+var server = require('../').default;
 
 server.listen(process.env.PORT || 9000);

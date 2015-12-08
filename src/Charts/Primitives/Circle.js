@@ -1,9 +1,8 @@
 
 import React, { Component, PropTypes } from 'react';
-import { decorate as mixin } from 'react-mixin';
+import reactMixin from 'react-mixin';
 import AnimatedPrimitive from '../Mixins/AnimatedPrimitive';
 
-@mixin(AnimatedPrimitive)
 class Circle extends Component {
     static propTypes = {
         animationDuration: PropTypes.number,
@@ -19,5 +18,7 @@ class Circle extends Component {
         animationDelay: 0
     }
 }
+
+reactMixin.onClass(Circle, AnimatedPrimitive);
 
 export default Circle;

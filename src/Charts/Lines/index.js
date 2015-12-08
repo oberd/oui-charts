@@ -1,15 +1,15 @@
 import d3 from 'd3';
 import React, { Component, PropTypes } from 'react';
-import { decorate as mixin } from 'react-mixin';
+import reactMixin from 'react-mixin';
 import BucketData from '../Mixins/BucketData';
 import Line from '../Primitives/Line';
 import Circle from '../Primitives/Circle';
 
-@mixin(BucketData)
 class Lines extends Component {
     static propTypes = {
         data: PropTypes.array.isRequired,
-        average: PropTypes.bool
+        average: PropTypes.bool,
+        strokeWidth: PropTypes.number
     };
     getPointX() {
         const range = this.getBucketScale();
@@ -50,6 +50,7 @@ class Lines extends Component {
                     y1={p(y(prevValue))}
                     y2={p(y(value))}
                     stroke={color(seriesIndex)}
+                    style={{ strokeWidth: this.props.strokeWidth }}
                 />
             ));
         }
@@ -82,10 +83,15 @@ class Lines extends Component {
             </g>
         );
     }
+    static defaultProps = {
+        strokeWidth: 3
+    };
     static contextTypes = {
         padding: PropTypes.number.isRequired,
         outerPadding: PropTypes.number.isRequired
     }
 }
+
+reactMixin.onClass(Lines, BucketData);
 
 export default Lines;

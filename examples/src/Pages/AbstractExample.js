@@ -26,8 +26,8 @@ class AbstractExample extends Component {
             </Example>
         );
     }
-    state = { data: data, data2: data2 };
-    handleRandomize() {
+    state = { data: data, data2: data2, standardDeviation: false };
+    generateData() {
         const count = Math.ceil(Math.random() * 10);
         const keyCount = Math.ceil(Math.random() * 5);
         const maxVal = Math.random() * 40 + 10;
@@ -41,7 +41,10 @@ class AbstractExample extends Component {
             }
             newData.push(newObj);
         }
-        this.setState({ data: newData });
+        return { data: newData };
+    }
+    handleRandomize() {
+        this.setState(this.generateData());
     }
 }
 export default AbstractExample;

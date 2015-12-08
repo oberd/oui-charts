@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"), require("d3"), require("react-dom"));
+		module.exports = factory(require("d3"), require("react"), require("react-dom"));
 	else if(typeof define === 'function' && define.amd)
-		define(["react", "d3", "react-dom"], factory);
+		define(["d3", "react", "react-dom"], factory);
 	else if(typeof exports === 'object')
-		exports["Charts"] = factory(require("react"), require("d3"), require("react-dom"));
+		exports["Charts"] = factory(require("d3"), require("react"), require("react-dom"));
 	else
-		root["Charts"] = factory(root["React"], root["d3"], root["ReactDOM"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_9__, __WEBPACK_EXTERNAL_MODULE_12__) {
+		root["Charts"] = factory(root["d3"], root["React"], root["ReactDOM"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_15__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -54,38 +54,64 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* eslint block-scoped-var: 0*/ /* UI Layout Components */'use strict';exports.__esModule = true;function _interopRequireDefault(obj){return obj && obj.__esModule?obj:{'default':obj};}var _ChartsChart=__webpack_require__(1);var _ChartsChart2=_interopRequireDefault(_ChartsChart);exports.Chart = _ChartsChart2['default'];var _ChartsBars=__webpack_require__(4);var _ChartsBars2=_interopRequireDefault(_ChartsBars);exports.Bars = _ChartsBars2['default'];var _ChartsLines=__webpack_require__(14);var _ChartsLines2=_interopRequireDefault(_ChartsLines);exports.Lines = _ChartsLines2['default'];var _ChartsLegend=__webpack_require__(17);var _ChartsLegend2=_interopRequireDefault(_ChartsLegend);exports.Legend = _ChartsLegend2['default'];var _ChartsAxisBucketX=__webpack_require__(20);var _ChartsAxisBucketX2=_interopRequireDefault(_ChartsAxisBucketX);exports.BucketX = _ChartsAxisBucketX2['default'];
+	'use strict';Object.defineProperty(exports,"__esModule",{value:true});exports.BucketX=exports.Legend=exports.Lines=exports.Bars=exports.Chart=undefined;exports.colorScale=colorScale;var _d=__webpack_require__(1);var _d2=_interopRequireDefault(_d);var _Chart2=__webpack_require__(2);var _Chart3=_interopRequireDefault(_Chart2);var _Bars2=__webpack_require__(8);var _Bars3=_interopRequireDefault(_Bars2);var _Lines2=__webpack_require__(21);var _Lines3=_interopRequireDefault(_Lines2);var _Legend2=__webpack_require__(23);var _Legend3=_interopRequireDefault(_Legend2);var _BucketX2=__webpack_require__(26);var _BucketX3=_interopRequireDefault(_BucketX2);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}} /* eslint block-scoped-var: 0*/ /* UI Layout Components */exports.Chart=_Chart3.default;exports.Bars=_Bars3.default;exports.Lines=_Lines3.default;exports.Legend=_Legend3.default;exports.BucketX=_BucketX3.default;function colorScale(count){return _d2.default.scale.category20().domain(_d2.default.range(count))}
 
 /***/ },
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	'use strict';exports.__esModule = true;var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();function _interopRequireDefault(obj){return obj && obj.__esModule?obj:{'default':obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}var _react=__webpack_require__(2);var _react2=_interopRequireDefault(_react);var _PropTypes=__webpack_require__(3);var Chart=(function(_Component){_inherits(Chart,_Component);function Chart(){_classCallCheck(this,Chart);_Component.apply(this,arguments);}Chart.prototype.getChildContext = function getChildContext(){var _props=this.props;var padding=_props.padding;var outerPadding=_props.outerPadding;return {padding:padding,outerPadding:outerPadding};};Chart.prototype.render = function render(){var _props2=this.props;var width=_props2.width;var height=_props2.height;var children=_props2.children;return _react2['default'].createElement('svg',{width:width,height:height},children);};_createClass(Chart,null,[{key:'propTypes',value:{width:_PropTypes.Size,height:_PropTypes.Size,padding:_react.PropTypes.number,outerPadding:_react.PropTypes.number,children:_PropTypes.Children},enumerable:true},{key:'defaultProps',value:{padding:0.1,outerPadding:0.1,width:'100%',height:400},enumerable:true},{key:'childContextTypes',value:{padding:_react.PropTypes.number,outerPadding:_react.PropTypes.number},enumerable:true}]);return Chart;})(_react.Component);exports['default'] = Chart;module.exports = exports['default'];
+	module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
 
 /***/ },
 /* 2 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
+	'use strict';var _createClass=(function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value" in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor}})();Object.defineProperty(exports,"__esModule",{value:true});var _react=__webpack_require__(3);var _react2=_interopRequireDefault(_react);var _PropTypes=__webpack_require__(4);var _Hover=__webpack_require__(5);var _Hover2=_interopRequireDefault(_Hover);var _Chart=__webpack_require__(7);var _Chart2=_interopRequireDefault(_Chart);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function")}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called")}return call&&(typeof call==="object"||typeof call==="function")?call:self}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass)}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass}var Chart=(function(_Component){_inherits(Chart,_Component);function Chart(){var _Object$getPrototypeO;var _temp,_this,_ret;_classCallCheck(this,Chart);for(var _len=arguments.length,args=Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key]}return _ret=(_temp=(_this=_possibleConstructorReturn(this,(_Object$getPrototypeO=Object.getPrototypeOf(Chart)).call.apply(_Object$getPrototypeO,[this].concat(args))),_this),_this.state={hover:false,activeElement:false},_temp),_possibleConstructorReturn(_this,_ret)}_createClass(Chart,[{key:'onClick',value:function onClick(){this.setState({hover:false,activeElement:false})}},{key:'getChildContext',value:function getChildContext(){var _props=this.props;var padding=_props.padding;var outerPadding=_props.outerPadding;return {padding:padding,outerPadding:outerPadding,setHoverData:this.setHoverState.bind(this),setActiveElement:this.setActiveElement.bind(this),hasActiveElement:this.hasActiveElement.bind(this),isActiveElement:this.hasActiveElement.bind(this),activeElement:this.state.activeElement}}},{key:'renderHover',value:function renderHover(){var out=_react2.default.createElement('span',null);if(this.props.hover&&this.state.hover){out=_react2.default.createElement('div',null,_react2.default.createElement(_Hover2.default,this.state.hover))}return out}},{key:'render',value:function render(){var _props2=this.props;var width=_props2.width;var height=_props2.height;var children=_props2.children;return _react2.default.createElement('div',{className:_Chart2.default['oui-chart']},_react2.default.createElement('svg',{width:width,height:height,onClick:this.onClick.bind(this)},children),this.renderHover())}},{key:'setHoverState',value:function setHoverState(data){if(!this.state.activeElement){this.setState({hover:data})}}},{key:'setActiveElement',value:function setActiveElement(hoverKey,data){this.setState({hover:data,activeElement:hoverKey})}},{key:'hasActiveElement',value:function hasActiveElement(){return !!this.state.activeElement}}]);return Chart})(_react.Component);Chart.propTypes={width:_PropTypes.Size,height:_PropTypes.Size,padding:_react.PropTypes.number,outerPadding:_react.PropTypes.number,children:_PropTypes.Children,hover:_react.PropTypes.oneOfType([_react.PropTypes.bool,_react.PropTypes.func])};Chart.defaultProps={padding:0.1,outerPadding:0.1,width:'100%',height:400};Chart.childContextTypes={padding:_react.PropTypes.number,outerPadding:_react.PropTypes.number,setHoverData:_react.PropTypes.func,setActiveElement:_react.PropTypes.func,hasActiveElement:_react.PropTypes.func,isActiveElement:_react.PropTypes.func,activeElement:_react.PropTypes.oneOfType([_react.PropTypes.string,_react.PropTypes.bool])};exports.default=Chart;
 
 /***/ },
 /* 3 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	'use strict';exports.__esModule = true;var _react=__webpack_require__(2);var Size=_react.PropTypes.oneOfType([_react.PropTypes.number,_react.PropTypes.string]);exports.Size = Size;var Children=_react.PropTypes.oneOfType([_react.PropTypes.node,_react.PropTypes.array,_react.PropTypes.string]);exports.Children = Children;
+	module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
 
 /***/ },
 /* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule = true;var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();function _interopRequireDefault(obj){return obj && obj.__esModule?obj:{'default':obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}var _react=__webpack_require__(2);var _react2=_interopRequireDefault(_react);var _PropTypes=__webpack_require__(3);var _reactMixin=__webpack_require__(5);var _MixinsBucketData=__webpack_require__(8);var _MixinsBucketData2=_interopRequireDefault(_MixinsBucketData);var _PrimitivesRect=__webpack_require__(11);var _PrimitivesRect2=_interopRequireDefault(_PrimitivesRect);var _d3=__webpack_require__(9);var _d32=_interopRequireDefault(_d3);var Bars=(function(_Component){_inherits(Bars,_Component);function Bars(){_classCallCheck(this,_Bars);_Component.apply(this,arguments);}Bars.prototype.renderBars = function renderBars(){var bars=[];var p=this.percent;var _context=this.context;var outerPadding=_context.outerPadding;var padding=_context.padding;var validBuckets=this.getValidBuckets();var valueKeys=Object.keys(validBuckets[0]).filter(function(key){return key !== '_label';});var facetCount=valueKeys.length;var bucketX=this.getBucketScale();var bucketSize=bucketX.rangeBand();var vals=this.getValues();var _buildVerticalScales=this.buildVerticalScales();var ht=_buildVerticalScales.ht;var y=_buildVerticalScales.y;var color=_d32['default'].scale.category20().domain(_d32['default'].range(facetCount));validBuckets.forEach(function(bucket,i){var currentBucketX=bucketX(i);var barX=_d32['default'].scale.ordinal().domain(_d32['default'].range(facetCount)).rangeBands([currentBucketX,currentBucketX + bucketSize],padding,outerPadding);var barWidth=barX.rangeBand();valueKeys.forEach(function(key,j){var barKey=key + '_' + i;var animationOffset=750 / vals.length;bars.push(_react2['default'].createElement(_PrimitivesRect2['default'],{key:barKey,x:p(barX(j)),width:p(barWidth),height:p(ht(bucket[key])),y:p(y(bucket[key])),fill:color(j),animationDuration:750,animationDelay:bars.length * animationOffset}));});});return bars;};Bars.prototype.render = function render(){var p=this.percent;var contentHeight=100 - 50 * (this.context.padding + this.context.outerPadding);return _react2['default'].createElement('g',null,_react2['default'].createElement('clipPath',{id:'bars-mask'},_react2['default'].createElement('rect',{x:'0',y:'0',width:'100%',height:p(contentHeight)})),_react2['default'].createElement('g',{clipPath:'url(#bars-mask)'},this.renderBars()));};Bars.prototype.buildVerticalScales = function buildVerticalScales(){var vals=this.getValues();var yExtents=this.buildYExtents();var ht=_d32['default'].scale.linear().domain(this.paddedExtent(vals)).clamp(true).range(yExtents);var y=ht.copy().range(yExtents.reverse());return {ht:ht,y:y};};_createClass(Bars,null,[{key:'propTypes',value:{width:_PropTypes.Size,height:_PropTypes.Size,data:_react.PropTypes.array.isRequired},enumerable:true},{key:'contextTypes',value:{padding:_react.PropTypes.number.isRequired,outerPadding:_react.PropTypes.number.isRequired},enumerable:true}]);var _Bars=Bars;Bars = _reactMixin.decorate(_MixinsBucketData2['default'])(Bars) || Bars;return Bars;})(_react.Component);exports['default'] = Bars;module.exports = exports['default'];
+	'use strict';Object.defineProperty(exports,"__esModule",{value:true});exports.Children=exports.Size=undefined;var _react=__webpack_require__(3);var Size=exports.Size=_react.PropTypes.oneOfType([_react.PropTypes.number,_react.PropTypes.string]);var Children=exports.Children=_react.PropTypes.oneOfType([_react.PropTypes.node,_react.PropTypes.array,_react.PropTypes.string]);
 
 /***/ },
 /* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var mixin = __webpack_require__(6);
-	var assign = __webpack_require__(7);
+	'use strict';var _createClass=(function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value" in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor}})();Object.defineProperty(exports,"__esModule",{value:true});var _react=__webpack_require__(3);var _react2=_interopRequireDefault(_react);var _Hover=__webpack_require__(6);var _Hover2=_interopRequireDefault(_Hover);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function")}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called")}return call&&(typeof call==="object"||typeof call==="function")?call:self}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass)}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass}var Hover=(function(_Component){_inherits(Hover,_Component);function Hover(){_classCallCheck(this,Hover);return _possibleConstructorReturn(this,Object.getPrototypeOf(Hover).apply(this,arguments))}_createClass(Hover,[{key:'render',value:function render(){var _this2=this;return _react2.default.createElement('div',{className:_Hover2.default.hover+' oui-chart-hover'},_react2.default.createElement('div',{className:'hover-attribute-label'},this.props.label),Object.keys(this.props.attributes).map(function(key){return _react2.default.createElement('div',{key:key,className:'hover-attributes'},_react2.default.createElement('span',{className:_Hover2.default['hover-attribute-key']+' hover-attribute-key'},key),_react2.default.createElement('span',{className:_Hover2.default['hover-attribute-value']+' hover-attribute-value'},_this2.props.attributes[key]))}))}}]);return Hover})(_react.Component);Hover.propTypes={label:_react.PropTypes.string,attributes:_react.PropTypes.object};exports.default=Hover;
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"hover":"Hover__hover___3j3DQ","hover-attribute-label":"Hover__hover-attribute-label___2NMdZ","hover-attribute-key":"Hover__hover-attribute-key___2b6z_","hover-attribute-value":"Hover__hover-attribute-value___UB5f8"};
+
+/***/ },
+/* 7 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"oui-chart":"Chart__oui-chart___13MaY"};
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';var _createClass=(function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value" in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor}})();Object.defineProperty(exports,"__esModule",{value:true});var _react=__webpack_require__(3);var _react2=_interopRequireDefault(_react);var _PropTypes=__webpack_require__(4);var _reactMixin=__webpack_require__(9);var _reactMixin2=_interopRequireDefault(_reactMixin);var _BucketData=__webpack_require__(12);var _BucketData2=_interopRequireDefault(_BucketData);var _Rect=__webpack_require__(14);var _Rect2=_interopRequireDefault(_Rect);var _Line=__webpack_require__(18);var _Line2=_interopRequireDefault(_Line);var _Formatters=__webpack_require__(19);var _d=__webpack_require__(1);var _d2=_interopRequireDefault(_d);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}function _defineProperty(obj,key,value){if(key in obj){Object.defineProperty(obj,key,{value:value,enumerable:true,configurable:true,writable:true})}else {obj[key]=value}return obj}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function")}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called")}return call&&(typeof call==="object"||typeof call==="function")?call:self}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass)}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass}var Bars=(function(_Component){_inherits(Bars,_Component);function Bars(){_classCallCheck(this,Bars);return _possibleConstructorReturn(this,Object.getPrototypeOf(Bars).apply(this,arguments))}_createClass(Bars,[{key:'renderBars',value:function renderBars(){var bars=[];var p=this.percent;var numberFormatter=this.props.numberFormatter;var _context=this.context;var outerPadding=_context.outerPadding;var padding=_context.padding;var validBuckets=this.getValidBuckets();var deviation=this.props.standardDeviation?this.getValidBuckets(this.props.standardDeviation):false;var valueKeys=Object.keys(validBuckets[0]).filter(function(key){return !key.match(/^_/)});var facetCount=valueKeys.length;var bucketX=this.getBucketScale();var bucketSize=bucketX.rangeBand();var vals=this.getValues();var _buildVerticalScales=this.buildVerticalScales();var ht=_buildVerticalScales.ht;var y=_buildVerticalScales.y;var color=_d2.default.scale.category20().domain(_d2.default.range(facetCount));validBuckets.forEach(function(bucket,i){var currentBucketX=bucketX(i);var barX=_d2.default.scale.ordinal().domain(_d2.default.range(facetCount)).rangeBands([currentBucketX,currentBucketX+bucketSize],padding,outerPadding);var barWidth=barX.rangeBand();valueKeys.forEach(function(key,j){var barKey=key+'_'+i;var animationOffset=750/vals.length;var hoverData={label:bucket._label,attributes:_defineProperty({},key,numberFormatter(bucket[key]))};if(bucket._meta&&bucket._meta[key]){hoverData.attributes=Object.assign(hoverData.attributes,bucket._meta[key])}if(deviation&&deviation[i]){hoverData.attributes['Std. Dev.']=numberFormatter(deviation[i][key])}bars.push(_react2.default.createElement(_Rect2.default,{key:barKey,x:p(barX(j)),width:p(barWidth),height:p(ht(bucket[key])),y:p(y(bucket[key])),fill:color(j),hoverKey:barKey,hoverData:hoverData,animationDuration:750,animationDelay:bars.length*animationOffset}));if(deviation&&deviation[i]){var devKey=barKey+'_dev';bars.push(_react2.default.createElement(_Line2.default,{key:devKey,x1:p(barX(j)+barWidth/2),x2:p(barX(j)+barWidth/2),y1:p(y(bucket[key])-ht(deviation[i][key])),y2:p(y(bucket[key])+ht(deviation[i][key])),stroke:color(j),hoverKey:barKey,hoverData:hoverData,style:{strokeWidth:3},animationDuration:750,animationDelay:bars.length*animationOffset}))}})});return bars}},{key:'render',value:function render(){var p=this.percent;var contentHeight=100-50*(this.context.padding+this.context.outerPadding);return _react2.default.createElement('g',null,_react2.default.createElement('clipPath',{id:'bars-mask'},_react2.default.createElement('rect',{x:'0',y:'0',width:'100%',height:p(contentHeight)})),_react2.default.createElement('g',{clipPath:'url(#bars-mask)'},this.renderBars()))}},{key:'buildVerticalScales',value:function buildVerticalScales(){var vals=this.getValues();var yExtents=this.buildYExtents();var ht=_d2.default.scale.linear().domain(this.paddedExtent(vals)).clamp(true).range(yExtents);var y=ht.copy().range(yExtents.reverse());return {ht:ht,y:y}}}]);return Bars})(_react.Component);Bars.propTypes={width:_PropTypes.Size,height:_PropTypes.Size,data:_react.PropTypes.array.isRequired,standardDeviation:_react.PropTypes.oneOfType([_react.PropTypes.array,_react.PropTypes.bool]),numberFormatter:_react.PropTypes.func};Bars.defaultProps={numberFormatter:_Formatters.number};Bars.contextTypes={padding:_react.PropTypes.number.isRequired,outerPadding:_react.PropTypes.number.isRequired,isActiveElement:_react.PropTypes.func};_reactMixin2.default.onClass(Bars,_BucketData2.default);exports.default=Bars;
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var mixin = __webpack_require__(10);
+	var assign = __webpack_require__(11);
 	
 	var mixinProto = mixin({
 	  // lifecycle stuff is as you'd expect
@@ -224,35 +250,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var reactMixin = mixinProto;
 	
 	  reactMixin.onClass = function(reactClass, mixin) {
-	    var mixinClone = assign({}, mixin);
-	    return mixinClass(reactClass, mixinClone);
+	    return mixinClass(reactClass, mixin);
 	  };
 	
 	  reactMixin.decorate = function(mixin) {
 	    return function(reactClass) {
-	      // Clone the incoming class
-	      var newClass = function(props) {
-	        reactClass.apply(this, arguments);
-	      };
-	      // Collect static properties
-	      var statics = {};
-	      for (var key in reactClass) {
-	        // Ordinarily, you'd use reactClass.hasOwnProperty(key) here
-	        // But we want to catch ALL static properties
-	        if (!Function.prototype[key]) {
-	          statics[key] = reactClass[key];
-	        }
-	      }
-	      assign(newClass, statics);
-	      newClass.prototype = Object.create(reactClass.prototype, {
-	          constructor: {
-	              value: newClass,
-	              enumerable: false,
-	              writable: true,
-	              configurable: true
-	          }
-	      });
-	      return reactMixin.onClass(newClass, mixin);
+	      return reactMixin.onClass(reactClass, mixin);
 	    };
 	  };
 	
@@ -261,7 +264,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 6 */
+/* 10 */
 /***/ function(module, exports) {
 
 	var objToStr = function(x){ return Object.prototype.toString.call(x); };
@@ -444,13 +447,16 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 7 */
+/* 11 */
 /***/ function(module, exports) {
 
+	/* eslint-disable no-unused-vars */
 	'use strict';
+	var hasOwnProperty = Object.prototype.hasOwnProperty;
+	var propIsEnumerable = Object.prototype.propertyIsEnumerable;
 	
-	function ToObject(val) {
-		if (val == null) {
+	function toObject(val) {
+		if (val === null || val === undefined) {
 			throw new TypeError('Object.assign cannot be called with null or undefined');
 		}
 	
@@ -459,15 +465,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	module.exports = Object.assign || function (target, source) {
 		var from;
-		var keys;
-		var to = ToObject(target);
+		var to = toObject(target);
+		var symbols;
 	
 		for (var s = 1; s < arguments.length; s++) {
-			from = arguments[s];
-			keys = Object.keys(Object(from));
+			from = Object(arguments[s]);
 	
-			for (var i = 0; i < keys.length; i++) {
-				to[keys[i]] = from[keys[i]];
+			for (var key in from) {
+				if (hasOwnProperty.call(from, key)) {
+					to[key] = from[key];
+				}
+			}
+	
+			if (Object.getOwnPropertySymbols) {
+				symbols = Object.getOwnPropertySymbols(from);
+				for (var i = 0; i < symbols.length; i++) {
+					if (propIsEnumerable.call(from, symbols[i])) {
+						to[symbols[i]] = from[symbols[i]];
+					}
+				}
 			}
 		}
 	
@@ -476,19 +492,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 8 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule = true;function _interopRequireDefault(obj){return obj && obj.__esModule?obj:{'default':obj};}var _d3=__webpack_require__(9);var _d32=_interopRequireDefault(_d3);var _underscore=__webpack_require__(10);var bucketData={getValidBuckets:function getValidBuckets(){var validBuckets=_underscore.filter(this.props.data,function(bucket){return _underscore.some(bucket,function(val,key){return val !== null && key !== '_label';});});return validBuckets;},getValues:function getValues(){var validBuckets=this.getValidBuckets();var valueBuckets=validBuckets.map(function(bucket){return _underscore.omit(bucket,'_label');});return _underscore.filter(_underscore.flatten(valueBuckets.map(_underscore.values)),function(val){return val !== null;});},getValueKeys:function getValueKeys(){var validBuckets=this.getValidBuckets();return Object.keys(validBuckets[0]).filter(function(key){return key !== '_label';});},getBucketScale:function getBucketScale(){var validBuckets=this.getValidBuckets();var bucketCount=validBuckets.length;var _context=this.context;var outerPadding=_context.outerPadding;var padding=_context.padding;return _d32['default'].scale.ordinal().domain(_d32['default'].range(bucketCount)).rangeBands([0,100],padding,outerPadding);},buildYExtents:function buildYExtents(){var _context2=this.context;var padding=_context2.padding;var outerPadding=_context2.outerPadding;var heightBand=_d32['default'].scale.ordinal().domain([0,1]).rangeBands([0,100],padding,outerPadding);var totalHeight=heightBand.rangeBand();var _heightBand$range=heightBand.range();var minY=_heightBand$range[0];var maxY=_heightBand$range[1];return [0,maxY - minY + totalHeight];},paddedExtent:function paddedExtent(vals){var _d3$extent=_d32['default'].extent(vals);var min=_d3$extent[0];var max=_d3$extent[1];var offset=Math.max(0.1,(max - min) * this.context.padding);return [min - offset,max + offset];},percent:function percent(input){return input.toString() + '%';},getColorScale:function getColorScale(){var valueKeys=this.getValueKeys();return _d32['default'].scale.category20().domain(_d32['default'].range(valueKeys.length));},getBucketAverage:function getBucketAverage(bucket){var vals=_underscore.values(_underscore.omit(bucket,'_label'));return _d32['default'].mean(vals);}};exports['default'] = bucketData;module.exports = exports['default'];
+	'use strict';var _slicedToArray=(function(){function sliceIterator(arr,i){var _arr=[];var _n=true;var _d=false;var _e=undefined;try{for(var _i=arr[Symbol.iterator](),_s;!(_n=(_s=_i.next()).done);_n=true){_arr.push(_s.value);if(i&&_arr.length===i)break}}catch(err) {_d=true;_e=err}finally {try{if(!_n&&_i["return"])_i["return"]()}finally {if(_d)throw _e}}return _arr}return function(arr,i){if(Array.isArray(arr)){return arr}else if(Symbol.iterator in Object(arr)){return sliceIterator(arr,i)}else {throw new TypeError("Invalid attempt to destructure non-iterable instance")}}})();Object.defineProperty(exports,"__esModule",{value:true});var _d2=__webpack_require__(1);var _d3=_interopRequireDefault(_d2);var _underscore=__webpack_require__(13);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}var bucketData={getValidBuckets:function getValidBuckets(data){var dt=data||this.props.data;var validBuckets=(0,_underscore.filter)(dt,function(bucket){return (0,_underscore.some)(bucket,function(val,key){return val!==null&&!key.match(/^_/)})});return validBuckets},getValues:function getValues(data){var dt=data||this.props.data;var validBuckets=this.getValidBuckets(dt);var valueBuckets=validBuckets.map(function(bucket){var out={};Object.keys(bucket).filter(function(k){return !k.match(/^_/)}).forEach(function(k){return out[k]=bucket[k]});return out});return (0,_underscore.filter)((0,_underscore.flatten)(valueBuckets.map(_underscore.values)),function(val){return val!==null})},getValueKeys:function getValueKeys(data){var dt=data||this.props.data;var validBuckets=this.getValidBuckets(dt);return Object.keys(validBuckets[0]).filter(function(key){return !key.match(/^_/)})},getBucketScale:function getBucketScale(data){var dt=data||this.props.data;var validBuckets=this.getValidBuckets(dt);var bucketCount=validBuckets.length;var _context=this.context;var outerPadding=_context.outerPadding;var padding=_context.padding;return _d3.default.scale.ordinal().domain(_d3.default.range(bucketCount)).rangeBands([0,100],padding,outerPadding)},buildYExtents:function buildYExtents(){var _context2=this.context;var padding=_context2.padding;var outerPadding=_context2.outerPadding;var heightBand=_d3.default.scale.ordinal().domain([0,1]).rangeBands([0,100],padding,outerPadding);var totalHeight=heightBand.rangeBand();var _heightBand$range=heightBand.range();var _heightBand$range2=_slicedToArray(_heightBand$range,2);var minY=_heightBand$range2[0];var maxY=_heightBand$range2[1];return [0,maxY-minY+totalHeight]},paddedExtent:function paddedExtent(vals){var _d3$extent=_d3.default.extent(vals);var _d3$extent2=_slicedToArray(_d3$extent,2);var min=_d3$extent2[0];var max=_d3$extent2[1];var offset=Math.max(0.1,(max-min)*this.context.padding);return [min-offset,max+offset]},percent:function percent(input){return input.toString()+'%'},getColorScale:function getColorScale(data){var dt=data||this.props.data;var valueKeys=this.getValueKeys(dt);return _d3.default.scale.category20().domain(_d3.default.range(valueKeys.length))},getBucketAverage:function getBucketAverage(bucket){var vals=(0,_underscore.values)((0,_underscore.omit)(bucket,function(val,key){return key.match(/^_/)}));return _d3.default.mean(vals)}};exports.default=bucketData;
 
 /***/ },
-/* 9 */
-/***/ function(module, exports) {
-
-	module.exports = __WEBPACK_EXTERNAL_MODULE_9__;
-
-/***/ },
-/* 10 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//     Underscore.js 1.8.3
@@ -2042,75 +2052,771 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';exports.__esModule = true;var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();function _interopRequireDefault(obj){return obj && obj.__esModule?obj:{'default':obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}var _d3=__webpack_require__(9);var _d32=_interopRequireDefault(_d3);var _react=__webpack_require__(2);var _react2=_interopRequireDefault(_react);var _reactDom=__webpack_require__(12);var _reactMixin=__webpack_require__(5);var _MixinsAnimatedPrimitive=__webpack_require__(13);var _MixinsAnimatedPrimitive2=_interopRequireDefault(_MixinsAnimatedPrimitive);var Rect=(function(_Component){_inherits(Rect,_Component);function Rect(){_classCallCheck(this,_Rect);_Component.apply(this,arguments);}Rect.prototype.componentDidMount = function componentDidMount(){var _props=this.props;var animationDuration=_props.animationDuration;var animationDelay=_props.animationDelay;if(animationDuration){var $el=_d32['default'].select(_reactDom.findDOMNode(this));var initialY=$el.attr('y');$el.attr('y','100%').transition().duration(animationDuration).delay(animationDelay).attr('y',initialY);}};Rect.prototype.render = function render(){return _react2['default'].createElement('rect',this.props);};_createClass(Rect,null,[{key:'propTypes',value:{animationDuration:_react.PropTypes.number,animationDelay:_react.PropTypes.number},enumerable:true},{key:'defaultProps',value:{animationDuration:1000,animationDelay:0},enumerable:true}]);var _Rect=Rect;Rect = _reactMixin.decorate(_MixinsAnimatedPrimitive2['default'])(Rect) || Rect;return Rect;})(_react.Component);exports['default'] = Rect;module.exports = exports['default'];
-
-/***/ },
-/* 12 */
-/***/ function(module, exports) {
-
-	module.exports = __WEBPACK_EXTERNAL_MODULE_12__;
-
-/***/ },
-/* 13 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';exports.__esModule = true;function _interopRequireDefault(obj){return obj && obj.__esModule?obj:{'default':obj};}var _d3=__webpack_require__(9);var _d32=_interopRequireDefault(_d3);var _reactDom=__webpack_require__(12);var AnimatedPrimitive={shouldComponentUpdate:function shouldComponentUpdate(nextProps){var _this=this;var ignore=['animationDuration','animationDelay'];var props=this.props;var changedKeys=Object.keys(this.props).filter(function(prop){return ignore.indexOf(prop) < 0;}).filter(function(prop){return nextProps[prop] !== props[prop];});var shouldUpdate=true;if(changedKeys.length){(function(){var $el=_d32['default'].select(_reactDom.findDOMNode(_this));var trans=$el.transition().duration(nextProps.animationDuration);changedKeys.forEach(function(key){var val=nextProps[key];trans.attr(key,val);});if(changedKeys.indexOf('children') > 0){trans.text(nextProps.children);}shouldUpdate = false;})();}return shouldUpdate;}};exports['default'] = AnimatedPrimitive;module.exports = exports['default'];
-
-/***/ },
 /* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule = true;var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();function _interopRequireDefault(obj){return obj && obj.__esModule?obj:{'default':obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}var _d3=__webpack_require__(9);var _d32=_interopRequireDefault(_d3);var _react=__webpack_require__(2);var _react2=_interopRequireDefault(_react);var _reactMixin=__webpack_require__(5);var _MixinsBucketData=__webpack_require__(8);var _MixinsBucketData2=_interopRequireDefault(_MixinsBucketData);var _PrimitivesLine=__webpack_require__(15);var _PrimitivesLine2=_interopRequireDefault(_PrimitivesLine);var _PrimitivesCircle=__webpack_require__(16);var _PrimitivesCircle2=_interopRequireDefault(_PrimitivesCircle);var Lines=(function(_Component){_inherits(Lines,_Component);function Lines(){_classCallCheck(this,_Lines);_Component.apply(this,arguments);}Lines.prototype.getPointX = function getPointX(){var range=this.getBucketScale();var offset=range.rangeBand() / 2;return function(index){return range(index) + offset;};};Lines.prototype.getPointY = function getPointY(){var vals=this.getValues();var yExtents=this.buildYExtents();var y=_d32['default'].scale.linear().clamp(true).domain(this.paddedExtent(vals)).range(yExtents.reverse());return y;};Lines.prototype.renderPoint = function renderPoint(bucketIndex,seriesIndex,value){var prevValue=arguments.length <= 3 || arguments[3] === undefined?null:arguments[3];var out=[];var p=this.percent;var x=this.getPointX();var y=this.getPointY();var color=this.getColorScale();var circleKey=bucketIndex + '_' + seriesIndex;out.push(_react2['default'].createElement(_PrimitivesCircle2['default'],{key:circleKey,cx:p(x(bucketIndex)),cy:p(y(value)),r:'10',fill:color(seriesIndex)}));if(prevValue !== null){var lineKey='line_' + bucketIndex + '_' + seriesIndex;out.push(_react2['default'].createElement(_PrimitivesLine2['default'],{key:lineKey,x1:p(x(bucketIndex - 1)),x2:p(x(bucketIndex)),y1:p(y(prevValue)),y2:p(y(value)),stroke:color(seriesIndex)}));}return out;};Lines.prototype.renderLines = function renderLines(){var _this=this;var out=[];var valueKeys=this.getValueKeys();var avg=this.getBucketAverage;var average=this.props.average;var prevBucket=null;this.getValidBuckets().map(function(bucket,i){if(average){var prevValue=prevBucket?avg(prevBucket):null;out = out.concat(_this.renderPoint(i,valueKeys.length,avg(bucket),prevValue));}else {valueKeys.forEach(function(key,j){var prevValue=prevBucket?prevBucket[key]:null;out = out.concat(_this.renderPoint(i,j,bucket[key],prevValue));});}prevBucket = bucket;});return out;};Lines.prototype.render = function render(){return _react2['default'].createElement('g',null,this.renderLines());};_createClass(Lines,null,[{key:'propTypes',value:{data:_react.PropTypes.array.isRequired,average:_react.PropTypes.bool},enumerable:true},{key:'contextTypes',value:{padding:_react.PropTypes.number.isRequired,outerPadding:_react.PropTypes.number.isRequired},enumerable:true}]);var _Lines=Lines;Lines = _reactMixin.decorate(_MixinsBucketData2['default'])(Lines) || Lines;return Lines;})(_react.Component);exports['default'] = Lines;module.exports = exports['default'];
+	'use strict';var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key]}}}return target};var _createClass=(function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value" in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor}})();Object.defineProperty(exports,"__esModule",{value:true});var _d=__webpack_require__(1);var _d2=_interopRequireDefault(_d);var _react=__webpack_require__(3);var _react2=_interopRequireDefault(_react);var _reactDom=__webpack_require__(15);var _reactMixin=__webpack_require__(9);var _reactMixin2=_interopRequireDefault(_reactMixin);var _AnimatedPrimitive=__webpack_require__(16);var _AnimatedPrimitive2=_interopRequireDefault(_AnimatedPrimitive);var _Hoverable=__webpack_require__(17);var _Hoverable2=_interopRequireDefault(_Hoverable);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function")}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called")}return call&&(typeof call==="object"||typeof call==="function")?call:self}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass)}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass}var Rect=(function(_Component){_inherits(Rect,_Component);function Rect(){_classCallCheck(this,Rect);return _possibleConstructorReturn(this,Object.getPrototypeOf(Rect).apply(this,arguments))}_createClass(Rect,[{key:'componentDidMount',value:function componentDidMount(){var _props=this.props;var animationDuration=_props.animationDuration;var animationDelay=_props.animationDelay;if(animationDuration){var $el=_d2.default.select((0,_reactDom.findDOMNode)(this));var initialY=$el.attr('y');$el.attr('y','100%').transition().duration(animationDuration).delay(animationDelay).attr('y',initialY)}}},{key:'render',value:function render(){var props=_extends({},this.props,{opacity:this.getOpacity()});return _react2.default.createElement('rect',_extends({},this.hoverableEvents(),props))}}]);return Rect})(_react.Component);Rect.propTypes={animationDuration:_react.PropTypes.number,animationDelay:_react.PropTypes.number};Rect.defaultProps={animationDuration:1000,animationDelay:0};Rect.contextTypes={setHoverData:_react.PropTypes.func,setActiveElement:_react.PropTypes.func,hasActiveElement:_react.PropTypes.func,activeElement:_react.PropTypes.oneOfType([_react.PropTypes.string,_react.PropTypes.bool])};_reactMixin2.default.onClass(Rect,_AnimatedPrimitive2.default);_reactMixin2.default.onClass(Rect,_Hoverable2.default);exports.default=Rect;
 
 /***/ },
 /* 15 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	'use strict';exports.__esModule = true;var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();function _interopRequireDefault(obj){return obj && obj.__esModule?obj:{'default':obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}var _react=__webpack_require__(2);var _react2=_interopRequireDefault(_react);var _reactMixin=__webpack_require__(5);var _MixinsAnimatedPrimitive=__webpack_require__(13);var _MixinsAnimatedPrimitive2=_interopRequireDefault(_MixinsAnimatedPrimitive);var Line=(function(_Component){_inherits(Line,_Component);function Line(){_classCallCheck(this,_Line);_Component.apply(this,arguments);}Line.prototype.render = function render(){return _react2['default'].createElement('line',this.props);};_createClass(Line,null,[{key:'propTypes',value:{animationDuration:_react.PropTypes.number,animationDelay:_react.PropTypes.number},enumerable:true},{key:'defaultProps',value:{animationDuration:1000,animationDelay:0},enumerable:true}]);var _Line=Line;Line = _reactMixin.decorate(_MixinsAnimatedPrimitive2['default'])(Line) || Line;return Line;})(_react.Component);exports['default'] = Line;module.exports = exports['default'];
+	module.exports = __WEBPACK_EXTERNAL_MODULE_15__;
 
 /***/ },
 /* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule = true;var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();function _interopRequireDefault(obj){return obj && obj.__esModule?obj:{'default':obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}var _react=__webpack_require__(2);var _react2=_interopRequireDefault(_react);var _reactMixin=__webpack_require__(5);var _MixinsAnimatedPrimitive=__webpack_require__(13);var _MixinsAnimatedPrimitive2=_interopRequireDefault(_MixinsAnimatedPrimitive);var Circle=(function(_Component){_inherits(Circle,_Component);function Circle(){_classCallCheck(this,_Circle);_Component.apply(this,arguments);}Circle.prototype.render = function render(){return _react2['default'].createElement('circle',this.props);};_createClass(Circle,null,[{key:'propTypes',value:{animationDuration:_react.PropTypes.number,animationDelay:_react.PropTypes.number},enumerable:true},{key:'defaultProps',value:{animationDuration:1000,animationDelay:0},enumerable:true}]);var _Circle=Circle;Circle = _reactMixin.decorate(_MixinsAnimatedPrimitive2['default'])(Circle) || Circle;return Circle;})(_react.Component);exports['default'] = Circle;module.exports = exports['default'];
+	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _d=__webpack_require__(1);var _d2=_interopRequireDefault(_d);var _reactDom=__webpack_require__(15);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}var AnimatedPrimitive={shouldComponentUpdate:function shouldComponentUpdate(nextProps){var _this=this;var ignore=['animationDuration','animationDelay','hoverData','style'];var props=this.props;var changedKeys=Object.keys(this.props).filter(function(prop){return ignore.indexOf(prop)<0}).filter(function(prop){return nextProps[prop]!==props[prop]});var shouldUpdate=true;if(changedKeys.length){(function(){var $el=_d2.default.select((0,_reactDom.findDOMNode)(_this));var trans=$el.transition().duration(nextProps.animationDuration);changedKeys.forEach(function(key){var val=nextProps[key];trans.attr(key,val)});if(changedKeys.indexOf('children')>0){trans.text(nextProps.children)}shouldUpdate=false})()}return shouldUpdate}};exports.default=AnimatedPrimitive;
 
 /***/ },
 /* 17 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	'use strict';exports.__esModule = true;var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();function _interopRequireDefault(obj){return obj && obj.__esModule?obj:{'default':obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}var _d3=__webpack_require__(9);var _d32=_interopRequireDefault(_d3);var _StylesCss=__webpack_require__(18);var _StylesCss2=_interopRequireDefault(_StylesCss);var _LegendCss=__webpack_require__(19);var _LegendCss2=_interopRequireDefault(_LegendCss);var _react=__webpack_require__(2);var _react2=_interopRequireDefault(_react);var Legend=(function(_Component){_inherits(Legend,_Component);function Legend(){_classCallCheck(this,Legend);_Component.apply(this,arguments);}Legend.prototype.getColorScale = function getColorScale(){var _this=this;if(this.props.data.length){var _ret=(function(){var valKeys=Object.keys(_this.props.data[0]).filter(function(key){return key !== '_label';});var color=_d32['default'].scale.category20().domain(_d32['default'].range(valKeys.length));return {v:valKeys.map(function(key,i){return {label:key,color:color(i)};})};})();if(typeof _ret === 'object')return _ret.v;}};Legend.prototype.render = function render(){var colorScale=this.getColorScale();var cls=[_StylesCss2['default']['flex-row'],_LegendCss2['default'].legend].join(' ');return _react2['default'].createElement('div',{className:_StylesCss2['default']['flex-row']},colorScale.map(function(series,i){return _react2['default'].createElement('div',{className:cls,key:i},_react2['default'].createElement('div',{className:_LegendCss2['default']['legend-color'],style:{backgroundColor:series.color}}),_react2['default'].createElement('div',{className:_LegendCss2['default']['legend-label'] + ' ' + _StylesCss2['default'].flex},series.label));}));};_createClass(Legend,null,[{key:'propTypes',value:{data:_react.PropTypes.array.isRequired},enumerable:true}]);return Legend;})(_react.Component);exports['default'] = Legend;module.exports = exports['default'];
+	"use strict";Object.defineProperty(exports,"__esModule",{value:true});var Hoverable={onMouseOver:function onMouseOver(){if(this.context.setHoverData){this.context.setHoverData(this.props.hoverData)}},onMouseOut:function onMouseOut(){if(this.context.setHoverData){this.context.setHoverData(false)}},onClick:function onClick(e){if(this.context.setActiveElement){if(this.isActiveElement()){this.setState({active:false});this.context.setActiveElement(false)}else {this.setState({active:true});this.context.setActiveElement(this.props.hoverKey,this.props.hoverData)}e.preventDefault();e.stopPropagation()}},hoverableEvents:function hoverableEvents(){return {onMouseOver:this.onMouseOver.bind(this),onMouseOut:this.onMouseOut.bind(this),onClick:this.onClick.bind(this)}},getInitialState:function getInitialState(){return {active:false}},getDefaultProps:function getDefaultProps(){return {hoverData:false,hoverKey:false}},getOpacity:function getOpacity(){var out=1.0;if(this.props.hoverData){if(!this.isActiveElement()&&this.context.hasActiveElement()){out=0.3}}return out},isActiveElement:function isActiveElement(){return this.context.activeElement===this.props.hoverKey}};exports.default=Hoverable;
 
 /***/ },
 /* 18 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	// removed by extract-text-webpack-plugin
-	module.exports = {"flex-row":"Styles__flex-row___3rd6t","flex":"Styles__flex___1puDb"};
+	'use strict';var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key]}}}return target};var _createClass=(function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value" in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor}})();Object.defineProperty(exports,"__esModule",{value:true});var _react=__webpack_require__(3);var _react2=_interopRequireDefault(_react);var _reactMixin=__webpack_require__(9);var _reactMixin2=_interopRequireDefault(_reactMixin);var _AnimatedPrimitive=__webpack_require__(16);var _AnimatedPrimitive2=_interopRequireDefault(_AnimatedPrimitive);var _Hoverable=__webpack_require__(17);var _Hoverable2=_interopRequireDefault(_Hoverable);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function")}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called")}return call&&(typeof call==="object"||typeof call==="function")?call:self}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass)}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass}var Line=(function(_Component){_inherits(Line,_Component);function Line(){_classCallCheck(this,Line);return _possibleConstructorReturn(this,Object.getPrototypeOf(Line).apply(this,arguments))}_createClass(Line,[{key:'render',value:function render(){var props=_extends({},this.props,{opacity:this.getOpacity()});return _react2.default.createElement('line',_extends({},this.hoverableEvents(),props))}}]);return Line})(_react.Component);Line.propTypes={animationDuration:_react.PropTypes.number,animationDelay:_react.PropTypes.number};Line.defaultProps={animationDuration:1000,animationDelay:0};Line.contextTypes={setHoverData:_react.PropTypes.func,setActiveElement:_react.PropTypes.func,hasActiveElement:_react.PropTypes.func};_reactMixin2.default.onClass(Line,_AnimatedPrimitive2.default);_reactMixin2.default.onClass(Line,_Hoverable2.default);exports.default=Line;
 
 /***/ },
 /* 19 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	// removed by extract-text-webpack-plugin
-	module.exports = {"legend":"Legend__legend___1XjH4","legend-color":"Legend__legend-color___5zkAO","legend-label":"Legend__legend-label___1i1Zf"};
+	'use strict';Object.defineProperty(exports,"__esModule",{value:true});exports.number=number;var _numeral=__webpack_require__(20);var _numeral2=_interopRequireDefault(_numeral);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}function number(input){return (0,_numeral2.default)(input).format('0.000')}
 
 /***/ },
 /* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule = true;var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();function _interopRequireDefault(obj){return obj && obj.__esModule?obj:{'default':obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}var _react=__webpack_require__(2);var _react2=_interopRequireDefault(_react);var _reactMixin=__webpack_require__(5);var _MixinsBucketData=__webpack_require__(8);var _MixinsBucketData2=_interopRequireDefault(_MixinsBucketData);var _PrimitivesRect=__webpack_require__(11);var _PrimitivesRect2=_interopRequireDefault(_PrimitivesRect);var _PrimitivesText=__webpack_require__(21);var _PrimitivesText2=_interopRequireDefault(_PrimitivesText);var BucketX=(function(_Component){_inherits(BucketX,_Component);function BucketX(){_classCallCheck(this,_BucketX);_Component.apply(this,arguments);}BucketX.prototype.render = function render(){var p=this.percent;var validBuckets=this.getValidBuckets();var bucketScale=this.getBucketScale();var bucketWidth=bucketScale.rangeBand();var yExtents=this.buildYExtents();var centerOffset=bucketWidth / 2;var textY=yExtents[1] + (100 - yExtents[1]) / 2;return _react2['default'].createElement('g',null,bucketScale.range().map(function(startX,i){return _react2['default'].createElement('g',{key:i},_react2['default'].createElement(_PrimitivesRect2['default'],{x:p(startX),width:p(bucketWidth),height:3,y:p(yExtents[1]),fill:'currentColor'}),_react2['default'].createElement(_PrimitivesText2['default'],{x:p(startX + centerOffset),y:p(textY),textAnchor:'middle'},validBuckets[i]._label || i));}));};_createClass(BucketX,null,[{key:'contextTypes',value:{padding:_react.PropTypes.number.isRequired,outerPadding:_react.PropTypes.number.isRequired},enumerable:true}]);var _BucketX=BucketX;BucketX = _reactMixin.decorate(_MixinsBucketData2['default'])(BucketX) || BucketX;return BucketX;})(_react.Component);exports['default'] = BucketX;module.exports = exports['default'];
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	 * numeral.js
+	 * version : 1.5.3
+	 * author : Adam Draper
+	 * license : MIT
+	 * http://adamwdraper.github.com/Numeral-js/
+	 */
+	
+	(function () {
+	
+	    /************************************
+	        Constants
+	    ************************************/
+	
+	    var numeral,
+	        VERSION = '1.5.3',
+	        // internal storage for language config files
+	        languages = {},
+	        currentLanguage = 'en',
+	        zeroFormat = null,
+	        defaultFormat = '0,0',
+	        // check for nodeJS
+	        hasModule = (typeof module !== 'undefined' && module.exports);
+	
+	
+	    /************************************
+	        Constructors
+	    ************************************/
+	
+	
+	    // Numeral prototype object
+	    function Numeral (number) {
+	        this._value = number;
+	    }
+	
+	    /**
+	     * Implementation of toFixed() that treats floats more like decimals
+	     *
+	     * Fixes binary rounding issues (eg. (0.615).toFixed(2) === '0.61') that present
+	     * problems for accounting- and finance-related software.
+	     */
+	    function toFixed (value, precision, roundingFunction, optionals) {
+	        var power = Math.pow(10, precision),
+	            optionalsRegExp,
+	            output;
+	            
+	        //roundingFunction = (roundingFunction !== undefined ? roundingFunction : Math.round);
+	        // Multiply up by precision, round accurately, then divide and use native toFixed():
+	        output = (roundingFunction(value * power) / power).toFixed(precision);
+	
+	        if (optionals) {
+	            optionalsRegExp = new RegExp('0{1,' + optionals + '}$');
+	            output = output.replace(optionalsRegExp, '');
+	        }
+	
+	        return output;
+	    }
+	
+	    /************************************
+	        Formatting
+	    ************************************/
+	
+	    // determine what type of formatting we need to do
+	    function formatNumeral (n, format, roundingFunction) {
+	        var output;
+	
+	        // figure out what kind of format we are dealing with
+	        if (format.indexOf('$') > -1) { // currency!!!!!
+	            output = formatCurrency(n, format, roundingFunction);
+	        } else if (format.indexOf('%') > -1) { // percentage
+	            output = formatPercentage(n, format, roundingFunction);
+	        } else if (format.indexOf(':') > -1) { // time
+	            output = formatTime(n, format);
+	        } else { // plain ol' numbers or bytes
+	            output = formatNumber(n._value, format, roundingFunction);
+	        }
+	
+	        // return string
+	        return output;
+	    }
+	
+	    // revert to number
+	    function unformatNumeral (n, string) {
+	        var stringOriginal = string,
+	            thousandRegExp,
+	            millionRegExp,
+	            billionRegExp,
+	            trillionRegExp,
+	            suffixes = ['KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
+	            bytesMultiplier = false,
+	            power;
+	
+	        if (string.indexOf(':') > -1) {
+	            n._value = unformatTime(string);
+	        } else {
+	            if (string === zeroFormat) {
+	                n._value = 0;
+	            } else {
+	                if (languages[currentLanguage].delimiters.decimal !== '.') {
+	                    string = string.replace(/\./g,'').replace(languages[currentLanguage].delimiters.decimal, '.');
+	                }
+	
+	                // see if abbreviations are there so that we can multiply to the correct number
+	                thousandRegExp = new RegExp('[^a-zA-Z]' + languages[currentLanguage].abbreviations.thousand + '(?:\\)|(\\' + languages[currentLanguage].currency.symbol + ')?(?:\\))?)?$');
+	                millionRegExp = new RegExp('[^a-zA-Z]' + languages[currentLanguage].abbreviations.million + '(?:\\)|(\\' + languages[currentLanguage].currency.symbol + ')?(?:\\))?)?$');
+	                billionRegExp = new RegExp('[^a-zA-Z]' + languages[currentLanguage].abbreviations.billion + '(?:\\)|(\\' + languages[currentLanguage].currency.symbol + ')?(?:\\))?)?$');
+	                trillionRegExp = new RegExp('[^a-zA-Z]' + languages[currentLanguage].abbreviations.trillion + '(?:\\)|(\\' + languages[currentLanguage].currency.symbol + ')?(?:\\))?)?$');
+	
+	                // see if bytes are there so that we can multiply to the correct number
+	                for (power = 0; power <= suffixes.length; power++) {
+	                    bytesMultiplier = (string.indexOf(suffixes[power]) > -1) ? Math.pow(1024, power + 1) : false;
+	
+	                    if (bytesMultiplier) {
+	                        break;
+	                    }
+	                }
+	
+	                // do some math to create our number
+	                n._value = ((bytesMultiplier) ? bytesMultiplier : 1) * ((stringOriginal.match(thousandRegExp)) ? Math.pow(10, 3) : 1) * ((stringOriginal.match(millionRegExp)) ? Math.pow(10, 6) : 1) * ((stringOriginal.match(billionRegExp)) ? Math.pow(10, 9) : 1) * ((stringOriginal.match(trillionRegExp)) ? Math.pow(10, 12) : 1) * ((string.indexOf('%') > -1) ? 0.01 : 1) * (((string.split('-').length + Math.min(string.split('(').length-1, string.split(')').length-1)) % 2)? 1: -1) * Number(string.replace(/[^0-9\.]+/g, ''));
+	
+	                // round if we are talking about bytes
+	                n._value = (bytesMultiplier) ? Math.ceil(n._value) : n._value;
+	            }
+	        }
+	        return n._value;
+	    }
+	
+	    function formatCurrency (n, format, roundingFunction) {
+	        var symbolIndex = format.indexOf('$'),
+	            openParenIndex = format.indexOf('('),
+	            minusSignIndex = format.indexOf('-'),
+	            space = '',
+	            spliceIndex,
+	            output;
+	
+	        // check for space before or after currency
+	        if (format.indexOf(' $') > -1) {
+	            space = ' ';
+	            format = format.replace(' $', '');
+	        } else if (format.indexOf('$ ') > -1) {
+	            space = ' ';
+	            format = format.replace('$ ', '');
+	        } else {
+	            format = format.replace('$', '');
+	        }
+	
+	        // format the number
+	        output = formatNumber(n._value, format, roundingFunction);
+	
+	        // position the symbol
+	        if (symbolIndex <= 1) {
+	            if (output.indexOf('(') > -1 || output.indexOf('-') > -1) {
+	                output = output.split('');
+	                spliceIndex = 1;
+	                if (symbolIndex < openParenIndex || symbolIndex < minusSignIndex){
+	                    // the symbol appears before the "(" or "-"
+	                    spliceIndex = 0;
+	                }
+	                output.splice(spliceIndex, 0, languages[currentLanguage].currency.symbol + space);
+	                output = output.join('');
+	            } else {
+	                output = languages[currentLanguage].currency.symbol + space + output;
+	            }
+	        } else {
+	            if (output.indexOf(')') > -1) {
+	                output = output.split('');
+	                output.splice(-1, 0, space + languages[currentLanguage].currency.symbol);
+	                output = output.join('');
+	            } else {
+	                output = output + space + languages[currentLanguage].currency.symbol;
+	            }
+	        }
+	
+	        return output;
+	    }
+	
+	    function formatPercentage (n, format, roundingFunction) {
+	        var space = '',
+	            output,
+	            value = n._value * 100;
+	
+	        // check for space before %
+	        if (format.indexOf(' %') > -1) {
+	            space = ' ';
+	            format = format.replace(' %', '');
+	        } else {
+	            format = format.replace('%', '');
+	        }
+	
+	        output = formatNumber(value, format, roundingFunction);
+	        
+	        if (output.indexOf(')') > -1 ) {
+	            output = output.split('');
+	            output.splice(-1, 0, space + '%');
+	            output = output.join('');
+	        } else {
+	            output = output + space + '%';
+	        }
+	
+	        return output;
+	    }
+	
+	    function formatTime (n) {
+	        var hours = Math.floor(n._value/60/60),
+	            minutes = Math.floor((n._value - (hours * 60 * 60))/60),
+	            seconds = Math.round(n._value - (hours * 60 * 60) - (minutes * 60));
+	        return hours + ':' + ((minutes < 10) ? '0' + minutes : minutes) + ':' + ((seconds < 10) ? '0' + seconds : seconds);
+	    }
+	
+	    function unformatTime (string) {
+	        var timeArray = string.split(':'),
+	            seconds = 0;
+	        // turn hours and minutes into seconds and add them all up
+	        if (timeArray.length === 3) {
+	            // hours
+	            seconds = seconds + (Number(timeArray[0]) * 60 * 60);
+	            // minutes
+	            seconds = seconds + (Number(timeArray[1]) * 60);
+	            // seconds
+	            seconds = seconds + Number(timeArray[2]);
+	        } else if (timeArray.length === 2) {
+	            // minutes
+	            seconds = seconds + (Number(timeArray[0]) * 60);
+	            // seconds
+	            seconds = seconds + Number(timeArray[1]);
+	        }
+	        return Number(seconds);
+	    }
+	
+	    function formatNumber (value, format, roundingFunction) {
+	        var negP = false,
+	            signed = false,
+	            optDec = false,
+	            abbr = '',
+	            abbrK = false, // force abbreviation to thousands
+	            abbrM = false, // force abbreviation to millions
+	            abbrB = false, // force abbreviation to billions
+	            abbrT = false, // force abbreviation to trillions
+	            abbrForce = false, // force abbreviation
+	            bytes = '',
+	            ord = '',
+	            abs = Math.abs(value),
+	            suffixes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
+	            min,
+	            max,
+	            power,
+	            w,
+	            precision,
+	            thousands,
+	            d = '',
+	            neg = false;
+	
+	        // check if number is zero and a custom zero format has been set
+	        if (value === 0 && zeroFormat !== null) {
+	            return zeroFormat;
+	        } else {
+	            // see if we should use parentheses for negative number or if we should prefix with a sign
+	            // if both are present we default to parentheses
+	            if (format.indexOf('(') > -1) {
+	                negP = true;
+	                format = format.slice(1, -1);
+	            } else if (format.indexOf('+') > -1) {
+	                signed = true;
+	                format = format.replace(/\+/g, '');
+	            }
+	
+	            // see if abbreviation is wanted
+	            if (format.indexOf('a') > -1) {
+	                // check if abbreviation is specified
+	                abbrK = format.indexOf('aK') >= 0;
+	                abbrM = format.indexOf('aM') >= 0;
+	                abbrB = format.indexOf('aB') >= 0;
+	                abbrT = format.indexOf('aT') >= 0;
+	                abbrForce = abbrK || abbrM || abbrB || abbrT;
+	
+	                // check for space before abbreviation
+	                if (format.indexOf(' a') > -1) {
+	                    abbr = ' ';
+	                    format = format.replace(' a', '');
+	                } else {
+	                    format = format.replace('a', '');
+	                }
+	
+	                if (abs >= Math.pow(10, 12) && !abbrForce || abbrT) {
+	                    // trillion
+	                    abbr = abbr + languages[currentLanguage].abbreviations.trillion;
+	                    value = value / Math.pow(10, 12);
+	                } else if (abs < Math.pow(10, 12) && abs >= Math.pow(10, 9) && !abbrForce || abbrB) {
+	                    // billion
+	                    abbr = abbr + languages[currentLanguage].abbreviations.billion;
+	                    value = value / Math.pow(10, 9);
+	                } else if (abs < Math.pow(10, 9) && abs >= Math.pow(10, 6) && !abbrForce || abbrM) {
+	                    // million
+	                    abbr = abbr + languages[currentLanguage].abbreviations.million;
+	                    value = value / Math.pow(10, 6);
+	                } else if (abs < Math.pow(10, 6) && abs >= Math.pow(10, 3) && !abbrForce || abbrK) {
+	                    // thousand
+	                    abbr = abbr + languages[currentLanguage].abbreviations.thousand;
+	                    value = value / Math.pow(10, 3);
+	                }
+	            }
+	
+	            // see if we are formatting bytes
+	            if (format.indexOf('b') > -1) {
+	                // check for space before
+	                if (format.indexOf(' b') > -1) {
+	                    bytes = ' ';
+	                    format = format.replace(' b', '');
+	                } else {
+	                    format = format.replace('b', '');
+	                }
+	
+	                for (power = 0; power <= suffixes.length; power++) {
+	                    min = Math.pow(1024, power);
+	                    max = Math.pow(1024, power+1);
+	
+	                    if (value >= min && value < max) {
+	                        bytes = bytes + suffixes[power];
+	                        if (min > 0) {
+	                            value = value / min;
+	                        }
+	                        break;
+	                    }
+	                }
+	            }
+	
+	            // see if ordinal is wanted
+	            if (format.indexOf('o') > -1) {
+	                // check for space before
+	                if (format.indexOf(' o') > -1) {
+	                    ord = ' ';
+	                    format = format.replace(' o', '');
+	                } else {
+	                    format = format.replace('o', '');
+	                }
+	
+	                ord = ord + languages[currentLanguage].ordinal(value);
+	            }
+	
+	            if (format.indexOf('[.]') > -1) {
+	                optDec = true;
+	                format = format.replace('[.]', '.');
+	            }
+	
+	            w = value.toString().split('.')[0];
+	            precision = format.split('.')[1];
+	            thousands = format.indexOf(',');
+	
+	            if (precision) {
+	                if (precision.indexOf('[') > -1) {
+	                    precision = precision.replace(']', '');
+	                    precision = precision.split('[');
+	                    d = toFixed(value, (precision[0].length + precision[1].length), roundingFunction, precision[1].length);
+	                } else {
+	                    d = toFixed(value, precision.length, roundingFunction);
+	                }
+	
+	                w = d.split('.')[0];
+	
+	                if (d.split('.')[1].length) {
+	                    d = languages[currentLanguage].delimiters.decimal + d.split('.')[1];
+	                } else {
+	                    d = '';
+	                }
+	
+	                if (optDec && Number(d.slice(1)) === 0) {
+	                    d = '';
+	                }
+	            } else {
+	                w = toFixed(value, null, roundingFunction);
+	            }
+	
+	            // format number
+	            if (w.indexOf('-') > -1) {
+	                w = w.slice(1);
+	                neg = true;
+	            }
+	
+	            if (thousands > -1) {
+	                w = w.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1' + languages[currentLanguage].delimiters.thousands);
+	            }
+	
+	            if (format.indexOf('.') === 0) {
+	                w = '';
+	            }
+	
+	            return ((negP && neg) ? '(' : '') + ((!negP && neg) ? '-' : '') + ((!neg && signed) ? '+' : '') + w + d + ((ord) ? ord : '') + ((abbr) ? abbr : '') + ((bytes) ? bytes : '') + ((negP && neg) ? ')' : '');
+	        }
+	    }
+	
+	    /************************************
+	        Top Level Functions
+	    ************************************/
+	
+	    numeral = function (input) {
+	        if (numeral.isNumeral(input)) {
+	            input = input.value();
+	        } else if (input === 0 || typeof input === 'undefined') {
+	            input = 0;
+	        } else if (!Number(input)) {
+	            input = numeral.fn.unformat(input);
+	        }
+	
+	        return new Numeral(Number(input));
+	    };
+	
+	    // version number
+	    numeral.version = VERSION;
+	
+	    // compare numeral object
+	    numeral.isNumeral = function (obj) {
+	        return obj instanceof Numeral;
+	    };
+	
+	    // This function will load languages and then set the global language.  If
+	    // no arguments are passed in, it will simply return the current global
+	    // language key.
+	    numeral.language = function (key, values) {
+	        if (!key) {
+	            return currentLanguage;
+	        }
+	
+	        if (key && !values) {
+	            if(!languages[key]) {
+	                throw new Error('Unknown language : ' + key);
+	            }
+	            currentLanguage = key;
+	        }
+	
+	        if (values || !languages[key]) {
+	            loadLanguage(key, values);
+	        }
+	
+	        return numeral;
+	    };
+	    
+	    // This function provides access to the loaded language data.  If
+	    // no arguments are passed in, it will simply return the current
+	    // global language object.
+	    numeral.languageData = function (key) {
+	        if (!key) {
+	            return languages[currentLanguage];
+	        }
+	        
+	        if (!languages[key]) {
+	            throw new Error('Unknown language : ' + key);
+	        }
+	        
+	        return languages[key];
+	    };
+	
+	    numeral.language('en', {
+	        delimiters: {
+	            thousands: ',',
+	            decimal: '.'
+	        },
+	        abbreviations: {
+	            thousand: 'k',
+	            million: 'm',
+	            billion: 'b',
+	            trillion: 't'
+	        },
+	        ordinal: function (number) {
+	            var b = number % 10;
+	            return (~~ (number % 100 / 10) === 1) ? 'th' :
+	                (b === 1) ? 'st' :
+	                (b === 2) ? 'nd' :
+	                (b === 3) ? 'rd' : 'th';
+	        },
+	        currency: {
+	            symbol: '$'
+	        }
+	    });
+	
+	    numeral.zeroFormat = function (format) {
+	        zeroFormat = typeof(format) === 'string' ? format : null;
+	    };
+	
+	    numeral.defaultFormat = function (format) {
+	        defaultFormat = typeof(format) === 'string' ? format : '0.0';
+	    };
+	
+	    /************************************
+	        Helpers
+	    ************************************/
+	
+	    function loadLanguage(key, values) {
+	        languages[key] = values;
+	    }
+	
+	    /************************************
+	        Floating-point helpers
+	    ************************************/
+	
+	    // The floating-point helper functions and implementation
+	    // borrows heavily from sinful.js: http://guipn.github.io/sinful.js/
+	
+	    /**
+	     * Array.prototype.reduce for browsers that don't support it
+	     * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce#Compatibility
+	     */
+	    if ('function' !== typeof Array.prototype.reduce) {
+	        Array.prototype.reduce = function (callback, opt_initialValue) {
+	            'use strict';
+	            
+	            if (null === this || 'undefined' === typeof this) {
+	                // At the moment all modern browsers, that support strict mode, have
+	                // native implementation of Array.prototype.reduce. For instance, IE8
+	                // does not support strict mode, so this check is actually useless.
+	                throw new TypeError('Array.prototype.reduce called on null or undefined');
+	            }
+	            
+	            if ('function' !== typeof callback) {
+	                throw new TypeError(callback + ' is not a function');
+	            }
+	
+	            var index,
+	                value,
+	                length = this.length >>> 0,
+	                isValueSet = false;
+	
+	            if (1 < arguments.length) {
+	                value = opt_initialValue;
+	                isValueSet = true;
+	            }
+	
+	            for (index = 0; length > index; ++index) {
+	                if (this.hasOwnProperty(index)) {
+	                    if (isValueSet) {
+	                        value = callback(value, this[index], index, this);
+	                    } else {
+	                        value = this[index];
+	                        isValueSet = true;
+	                    }
+	                }
+	            }
+	
+	            if (!isValueSet) {
+	                throw new TypeError('Reduce of empty array with no initial value');
+	            }
+	
+	            return value;
+	        };
+	    }
+	
+	    
+	    /**
+	     * Computes the multiplier necessary to make x >= 1,
+	     * effectively eliminating miscalculations caused by
+	     * finite precision.
+	     */
+	    function multiplier(x) {
+	        var parts = x.toString().split('.');
+	        if (parts.length < 2) {
+	            return 1;
+	        }
+	        return Math.pow(10, parts[1].length);
+	    }
+	
+	    /**
+	     * Given a variable number of arguments, returns the maximum
+	     * multiplier that must be used to normalize an operation involving
+	     * all of them.
+	     */
+	    function correctionFactor() {
+	        var args = Array.prototype.slice.call(arguments);
+	        return args.reduce(function (prev, next) {
+	            var mp = multiplier(prev),
+	                mn = multiplier(next);
+	        return mp > mn ? mp : mn;
+	        }, -Infinity);
+	    }        
+	
+	
+	    /************************************
+	        Numeral Prototype
+	    ************************************/
+	
+	
+	    numeral.fn = Numeral.prototype = {
+	
+	        clone : function () {
+	            return numeral(this);
+	        },
+	
+	        format : function (inputString, roundingFunction) {
+	            return formatNumeral(this, 
+	                  inputString ? inputString : defaultFormat, 
+	                  (roundingFunction !== undefined) ? roundingFunction : Math.round
+	              );
+	        },
+	
+	        unformat : function (inputString) {
+	            if (Object.prototype.toString.call(inputString) === '[object Number]') { 
+	                return inputString; 
+	            }
+	            return unformatNumeral(this, inputString ? inputString : defaultFormat);
+	        },
+	
+	        value : function () {
+	            return this._value;
+	        },
+	
+	        valueOf : function () {
+	            return this._value;
+	        },
+	
+	        set : function (value) {
+	            this._value = Number(value);
+	            return this;
+	        },
+	
+	        add : function (value) {
+	            var corrFactor = correctionFactor.call(null, this._value, value);
+	            function cback(accum, curr, currI, O) {
+	                return accum + corrFactor * curr;
+	            }
+	            this._value = [this._value, value].reduce(cback, 0) / corrFactor;
+	            return this;
+	        },
+	
+	        subtract : function (value) {
+	            var corrFactor = correctionFactor.call(null, this._value, value);
+	            function cback(accum, curr, currI, O) {
+	                return accum - corrFactor * curr;
+	            }
+	            this._value = [value].reduce(cback, this._value * corrFactor) / corrFactor;            
+	            return this;
+	        },
+	
+	        multiply : function (value) {
+	            function cback(accum, curr, currI, O) {
+	                var corrFactor = correctionFactor(accum, curr);
+	                return (accum * corrFactor) * (curr * corrFactor) /
+	                    (corrFactor * corrFactor);
+	            }
+	            this._value = [this._value, value].reduce(cback, 1);
+	            return this;
+	        },
+	
+	        divide : function (value) {
+	            function cback(accum, curr, currI, O) {
+	                var corrFactor = correctionFactor(accum, curr);
+	                return (accum * corrFactor) / (curr * corrFactor);
+	            }
+	            this._value = [this._value, value].reduce(cback);            
+	            return this;
+	        },
+	
+	        difference : function (value) {
+	            return Math.abs(numeral(this._value).subtract(value).value());
+	        }
+	
+	    };
+	
+	    /************************************
+	        Exposing Numeral
+	    ************************************/
+	
+	    // CommonJS module is defined
+	    if (hasModule) {
+	        module.exports = numeral;
+	    }
+	
+	    /*global ender:false */
+	    if (typeof ender === 'undefined') {
+	        // here, `this` means `window` in the browser, or `global` on the server
+	        // add `numeral` as a global object via a string identifier,
+	        // for Closure Compiler 'advanced' mode
+	        this['numeral'] = numeral;
+	    }
+	
+	    /*global define:false */
+	    if (true) {
+	        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+	            return numeral;
+	        }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	    }
+	}).call(this);
+
 
 /***/ },
 /* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';exports.__esModule = true;var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();function _interopRequireDefault(obj){return obj && obj.__esModule?obj:{'default':obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}var _react=__webpack_require__(2);var _react2=_interopRequireDefault(_react);var _reactMixin=__webpack_require__(5);var _MixinsAnimatedPrimitive=__webpack_require__(13);var _MixinsAnimatedPrimitive2=_interopRequireDefault(_MixinsAnimatedPrimitive);var Rect=(function(_Component){_inherits(Rect,_Component);function Rect(){_classCallCheck(this,_Rect);_Component.apply(this,arguments);}Rect.prototype.render = function render(){return _react2['default'].createElement('text',this.props);};_createClass(Rect,null,[{key:'propTypes',value:{animationDuration:_react.PropTypes.number,animationDelay:_react.PropTypes.number},enumerable:true},{key:'defaultProps',value:{animationDuration:1000,animationDelay:0,fill:'currentColor',textAnchor:'middle'},enumerable:true}]);var _Rect=Rect;Rect = _reactMixin.decorate(_MixinsAnimatedPrimitive2['default'])(Rect) || Rect;return Rect;})(_react.Component);exports['default'] = Rect;module.exports = exports['default'];
+	'use strict';var _createClass=(function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value" in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor}})();Object.defineProperty(exports,"__esModule",{value:true});var _d=__webpack_require__(1);var _d2=_interopRequireDefault(_d);var _react=__webpack_require__(3);var _react2=_interopRequireDefault(_react);var _reactMixin=__webpack_require__(9);var _reactMixin2=_interopRequireDefault(_reactMixin);var _BucketData=__webpack_require__(12);var _BucketData2=_interopRequireDefault(_BucketData);var _Line=__webpack_require__(18);var _Line2=_interopRequireDefault(_Line);var _Circle=__webpack_require__(22);var _Circle2=_interopRequireDefault(_Circle);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function")}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called")}return call&&(typeof call==="object"||typeof call==="function")?call:self}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass)}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass}var Lines=(function(_Component){_inherits(Lines,_Component);function Lines(){_classCallCheck(this,Lines);return _possibleConstructorReturn(this,Object.getPrototypeOf(Lines).apply(this,arguments))}_createClass(Lines,[{key:'getPointX',value:function getPointX(){var range=this.getBucketScale();var offset=range.rangeBand()/2;return function(index){return range(index)+offset}}},{key:'getPointY',value:function getPointY(){var vals=this.getValues();var yExtents=this.buildYExtents();var y=_d2.default.scale.linear().clamp(true).domain(this.paddedExtent(vals)).range(yExtents.reverse());return y}},{key:'renderPoint',value:function renderPoint(bucketIndex,seriesIndex,value){var prevValue=arguments.length<=3||arguments[3]===undefined?null:arguments[3];var out=[];var p=this.percent;var x=this.getPointX();var y=this.getPointY();var color=this.getColorScale();var circleKey=bucketIndex+'_'+seriesIndex;out.push(_react2.default.createElement(_Circle2.default,{key:circleKey,cx:p(x(bucketIndex)),cy:p(y(value)),r:'10',fill:color(seriesIndex)}));if(prevValue!==null){var lineKey='line_'+bucketIndex+'_'+seriesIndex;out.push(_react2.default.createElement(_Line2.default,{key:lineKey,x1:p(x(bucketIndex-1)),x2:p(x(bucketIndex)),y1:p(y(prevValue)),y2:p(y(value)),stroke:color(seriesIndex),style:{strokeWidth:this.props.strokeWidth}}))}return out}},{key:'renderLines',value:function renderLines(){var _this2=this;var out=[];var valueKeys=this.getValueKeys();var avg=this.getBucketAverage;var average=this.props.average;var prevBucket=null;this.getValidBuckets().map(function(bucket,i){if(average){var prevValue=prevBucket?avg(prevBucket):null;out=out.concat(_this2.renderPoint(i,valueKeys.length,avg(bucket),prevValue))}else {valueKeys.forEach(function(key,j){var prevValue=prevBucket?prevBucket[key]:null;out=out.concat(_this2.renderPoint(i,j,bucket[key],prevValue))})}prevBucket=bucket});return out}},{key:'render',value:function render(){return _react2.default.createElement('g',null,this.renderLines())}}]);return Lines})(_react.Component);Lines.propTypes={data:_react.PropTypes.array.isRequired,average:_react.PropTypes.bool,strokeWidth:_react.PropTypes.number};Lines.defaultProps={strokeWidth:3};Lines.contextTypes={padding:_react.PropTypes.number.isRequired,outerPadding:_react.PropTypes.number.isRequired};_reactMixin2.default.onClass(Lines,_BucketData2.default);exports.default=Lines;
+
+/***/ },
+/* 22 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';var _createClass=(function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value" in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor}})();Object.defineProperty(exports,"__esModule",{value:true});var _react=__webpack_require__(3);var _react2=_interopRequireDefault(_react);var _reactMixin=__webpack_require__(9);var _reactMixin2=_interopRequireDefault(_reactMixin);var _AnimatedPrimitive=__webpack_require__(16);var _AnimatedPrimitive2=_interopRequireDefault(_AnimatedPrimitive);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function")}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called")}return call&&(typeof call==="object"||typeof call==="function")?call:self}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass)}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass}var Circle=(function(_Component){_inherits(Circle,_Component);function Circle(){_classCallCheck(this,Circle);return _possibleConstructorReturn(this,Object.getPrototypeOf(Circle).apply(this,arguments))}_createClass(Circle,[{key:'render',value:function render(){return _react2.default.createElement('circle',this.props)}}]);return Circle})(_react.Component);Circle.propTypes={animationDuration:_react.PropTypes.number,animationDelay:_react.PropTypes.number};Circle.defaultProps={animationDuration:1000,animationDelay:0};_reactMixin2.default.onClass(Circle,_AnimatedPrimitive2.default);exports.default=Circle;
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';var _createClass=(function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value" in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor}})();Object.defineProperty(exports,"__esModule",{value:true});var _d=__webpack_require__(1);var _d2=_interopRequireDefault(_d);var _Styles=__webpack_require__(24);var _Styles2=_interopRequireDefault(_Styles);var _Legend=__webpack_require__(25);var _Legend2=_interopRequireDefault(_Legend);var _react=__webpack_require__(3);var _react2=_interopRequireDefault(_react);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}function _typeof(obj){return obj&&typeof Symbol!=="undefined"&&obj.constructor===Symbol?"symbol":typeof obj}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function")}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called")}return call&&(typeof call==="object"||typeof call==="function")?call:self}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass)}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass}var Legend=(function(_Component){_inherits(Legend,_Component);function Legend(){_classCallCheck(this,Legend);return _possibleConstructorReturn(this,Object.getPrototypeOf(Legend).apply(this,arguments))}_createClass(Legend,[{key:'getColorScale',value:function getColorScale(){var _this2=this;if(this.props.data.length){var _ret=(function(){var valKeys=Object.keys(_this2.props.data[0]).filter(function(key){return !key.match(/^_/)});var color=_d2.default.scale.category20().domain(_d2.default.range(valKeys.length));return {v:valKeys.map(function(key,i){return {label:key,color:color(i)}})}})();if((typeof _ret==='undefined'?'undefined':_typeof(_ret))==="object")return _ret.v}}},{key:'render',value:function render(){var colorScale=this.getColorScale();var cls=[_Styles2.default['flex-row'],_Legend2.default.legend].join(' ');return _react2.default.createElement('div',{className:_Styles2.default['flex-row-wrap']},colorScale.map(function(series,i){return _react2.default.createElement('div',{className:cls,key:i},_react2.default.createElement('div',{className:_Legend2.default['legend-color'],style:{backgroundColor:series.color}}),_react2.default.createElement('div',{className:_Legend2.default['legend-label']+' '+_Styles2.default.flex},series.label))}))}}]);return Legend})(_react.Component);Legend.propTypes={data:_react.PropTypes.array.isRequired};exports.default=Legend;
+
+/***/ },
+/* 24 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"flex-row":"Styles__flex-row___1RYyk","flex":"Styles__flex___2apGr","flex-row-wrap":"Styles__flex-row-wrap___2TB5y"};
+
+/***/ },
+/* 25 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"legend":"Legend__legend___10RPW","legend-color":"Legend__legend-color____T8ud","legend-label":"Legend__legend-label___3_RKO"};
+
+/***/ },
+/* 26 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';var _createClass=(function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value" in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor}})();Object.defineProperty(exports,"__esModule",{value:true});var _react=__webpack_require__(3);var _react2=_interopRequireDefault(_react);var _reactMixin=__webpack_require__(9);var _reactMixin2=_interopRequireDefault(_reactMixin);var _BucketData=__webpack_require__(12);var _BucketData2=_interopRequireDefault(_BucketData);var _Rect=__webpack_require__(14);var _Rect2=_interopRequireDefault(_Rect);var _Text=__webpack_require__(27);var _Text2=_interopRequireDefault(_Text);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function")}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called")}return call&&(typeof call==="object"||typeof call==="function")?call:self}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass)}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass}var BucketX=(function(_Component){_inherits(BucketX,_Component);function BucketX(){_classCallCheck(this,BucketX);return _possibleConstructorReturn(this,Object.getPrototypeOf(BucketX).apply(this,arguments))}_createClass(BucketX,[{key:'render',value:function render(){var p=this.percent;var validBuckets=this.getValidBuckets();var bucketScale=this.getBucketScale();var bucketWidth=bucketScale.rangeBand();var yExtents=this.buildYExtents();var centerOffset=bucketWidth/2;var textY=yExtents[1]+(100-yExtents[1])/2;return _react2.default.createElement('g',null,bucketScale.range().map(function(startX,i){return _react2.default.createElement('g',{key:i},_react2.default.createElement(_Rect2.default,{x:p(startX),width:p(bucketWidth),height:3,y:p(yExtents[1]),fill:'currentColor'}),_react2.default.createElement(_Text2.default,{x:p(startX+centerOffset),y:p(textY),textAnchor:'middle'},validBuckets[i]._label||i))}))}}]);return BucketX})(_react.Component);BucketX.contextTypes={padding:_react.PropTypes.number.isRequired,outerPadding:_react.PropTypes.number.isRequired};_reactMixin2.default.onClass(BucketX,_BucketData2.default);exports.default=BucketX;
+
+/***/ },
+/* 27 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';var _createClass=(function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value" in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor}})();Object.defineProperty(exports,"__esModule",{value:true});var _react=__webpack_require__(3);var _react2=_interopRequireDefault(_react);var _reactMixin=__webpack_require__(9);var _reactMixin2=_interopRequireDefault(_reactMixin);var _AnimatedPrimitive=__webpack_require__(16);var _AnimatedPrimitive2=_interopRequireDefault(_AnimatedPrimitive);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function")}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called")}return call&&(typeof call==="object"||typeof call==="function")?call:self}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass)}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass}var Text=(function(_Component){_inherits(Text,_Component);function Text(){_classCallCheck(this,Text);return _possibleConstructorReturn(this,Object.getPrototypeOf(Text).apply(this,arguments))}_createClass(Text,[{key:'render',value:function render(){return _react2.default.createElement('text',this.props)}}]);return Text})(_react.Component);Text.propTypes={animationDuration:_react.PropTypes.number,animationDelay:_react.PropTypes.number};Text.defaultProps={animationDuration:1000,animationDelay:0,fill:'currentColor',textAnchor:'middle'};_reactMixin2.default.onClass(Text,_AnimatedPrimitive2.default);exports.default=Text;
 
 /***/ }
 /******/ ])
 });
 ;
-//# sourceMappingURL=Charts.js.map

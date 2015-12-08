@@ -1,10 +1,8 @@
 
-import 'babel-core/polyfill';
-
 import koa from 'koa';
 import stat from 'koa-static';
 import path from 'path';
-import koaRouter from 'koa-router';
+// import koaRouter from 'koa-router';
 
 import React from 'react';
 import { renderToString } from 'react-dom/server';
@@ -13,7 +11,7 @@ import createLocation from 'history/lib/createLocation';
 import routes from './routes';
 
 const app = koa();
-const router = koaRouter();
+// const router = koaRouter();
 
 function *react(location) {
     return new Promise(resolve => {
