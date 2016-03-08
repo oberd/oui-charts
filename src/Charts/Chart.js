@@ -29,7 +29,7 @@ class Chart extends Component {
         };
     }
     renderHover() {
-        let out = <span />;
+        let out = undefined;
         if (this.props.hover && this.state.hover) {
             out = <div><Hover {...this.state.hover} /></div>;
         }
@@ -37,12 +37,13 @@ class Chart extends Component {
     }
     render() {
         const { width, height, children } = this.props;
+        const hover = this.renderHover();
         return (
             <div className={styles['oui-chart']}>
                 <svg width={width} height={height} onClick={this.onClick.bind(this)}>
                     {children}
                 </svg>
-                {this.renderHover()}
+                {hover}
             </div>
         );
     }

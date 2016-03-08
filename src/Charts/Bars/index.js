@@ -92,12 +92,7 @@ class Bars extends Component {
         const contentHeight = 100 - 50 * (this.context.padding + this.context.outerPadding);
         return (
             <g>
-                <clipPath id="bars-mask">
-                    <rect x="0" y="0" width="100%" height={p(contentHeight)} />
-                </clipPath>
-                <g clipPath="url(#bars-mask)">
-                    {this.renderBars()}
-                </g>
+                {this.renderBars()}
             </g>
         );
     }

@@ -72,6 +72,15 @@ var Home = (function (_Component) {
                                 { to: '/bar-and-line' },
                                 'Bar and Line Chart'
                             )
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            _react2.default.createElement(
+                                _reactRouter.Link,
+                                { to: '/gauge' },
+                                'Gauge'
+                            )
                         )
                     )
                 )

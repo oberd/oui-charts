@@ -75,7 +75,7 @@
     "react-dom": "^0.14.3"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "node_modules/.bin/mocha --recursive --compilers js:babel-register"
   },
   "author": "Nathan Bleigh",
   "license": "ISC",

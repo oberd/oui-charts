@@ -7,6 +7,7 @@ export Bars from './Charts/Bars';
 export Lines from './Charts/Lines';
 export Legend from './Charts/Legend';
 export BucketX from './Charts/Axis/BucketX';
+export Gauge from './Charts/Gauge';
 
 export function colorScale(count) {
     return d3.scale.category20().domain(d3.range(count));

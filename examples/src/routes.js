@@ -7,6 +7,7 @@ import Home from './Pages/Home';
 import BarChart from './Pages/BarChart';
 import LineChart from './Pages/LineChart';
 import BarAndLine from './Pages/BarAndLine';
+import GaugeExample from './Pages/Gauge';
 
 const routes = (
     <Route path="/" component={Layout}>
@@ -14,6 +15,7 @@ const routes = (
         <Route path="/bar-chart" components={{ main: BarChart }} />
         <Route path="/line-chart" components={{ main: LineChart }} />
         <Route path="/bar-and-line" components={{ main: BarAndLine }} />
+        <Route path="/gauge" components={{ main: GaugeExample }} />
     </Route>
 );
 

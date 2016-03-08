@@ -30,6 +30,10 @@ var _BarAndLine = require('./Pages/BarAndLine');
 
 var _BarAndLine2 = _interopRequireDefault(_BarAndLine);
 
+var _Gauge = require('./Pages/Gauge');
+
+var _Gauge2 = _interopRequireDefault(_Gauge);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var routes = _react2.default.createElement(
@@ -38,7 +42,8 @@ var routes = _react2.default.createElement(
     _react2.default.createElement(_reactRouter.IndexRoute, { components: { main: _Home2.default } }),
     _react2.default.createElement(_reactRouter.Route, { path: '/bar-chart', components: { main: _BarChart2.default } }),
     _react2.default.createElement(_reactRouter.Route, { path: '/line-chart', components: { main: _LineChart2.default } }),
-    _react2.default.createElement(_reactRouter.Route, { path: '/bar-and-line', components: { main: _BarAndLine2.default } })
+    _react2.default.createElement(_reactRouter.Route, { path: '/bar-and-line', components: { main: _BarAndLine2.default } }),
+    _react2.default.createElement(_reactRouter.Route, { path: '/gauge', components: { main: _Gauge2.default } })
 );
 
 exports.default = routes;

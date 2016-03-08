@@ -16,6 +16,7 @@ class Home extends Component {
                         <li><Link to="/bar-chart">Bar Chart</Link></li>
                         <li><Link to="/line-chart">Line Chart</Link></li>
                         <li><Link to="/bar-and-line">Bar and Line Chart</Link></li>
+                        <li><Link to="/gauge">Gauge</Link></li>
                     </ul>
                 </nav>
             </div>

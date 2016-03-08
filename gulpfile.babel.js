@@ -22,8 +22,7 @@ gulp.task('restart-examples', ['babel-examples', 'webpack-examples', 'copy-style
 gulp.task('examples', ['babel-examples', 'webpack-examples', 'copy-styles'], () => {
     examples = nodemon({ ext: 'none', script: 'examples/dist/bin/run.js', watch: []})
         .on('restart', () => gutil.log('restarting node...'));
-    gulp.watch(['examples/src/**/*.js', 'src/**/*.js'], ['restart-examples']);
-    gulp.watch('src/**/*.css', ['myth']);
+    gulp.watch(['examples/src/**/*.js', 'src/**/*.{js,css}'], ['restart-examples']);
 });
 
 import webpack from 'webpack-stream';
