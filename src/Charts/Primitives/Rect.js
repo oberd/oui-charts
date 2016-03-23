@@ -16,8 +16,9 @@ class Rect extends Component {
         if (animationDuration) {
             const $el = d3.select(findDOMNode(this));
             const initialY = $el.attr('y');
-            $el.attr('y', '100%')
+            $el.interrupt()
                 .transition()
+                .attr('y', '100%')
                 .duration(animationDuration)
                 .delay(animationDelay)
                 .attr('y', initialY);

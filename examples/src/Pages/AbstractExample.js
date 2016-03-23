@@ -21,12 +21,12 @@ class AbstractExample extends Component {
     }
     render() {
         return (
-            <Example title={this.title} onRandomize={this.handleRandomize.bind(this)}>
-                {this.renderChart()}
+            <Example title={this.title} onRandomize={this.handleRandomize.bind(this)}  onRemountAndRandomize={this.handleRemount.bind(this)}>
+                {this.state.noChart ? 'Loading...' : this.renderChart() }
             </Example>
         );
     }
-    state = { data: data, data2: data2, standardDeviation: false };
+    state = { data: data, data2: data2, standardDeviation: false, noChart: false };
     generateData() {
         const count = Math.ceil(Math.random() * 10);
         const keyCount = Math.ceil(Math.random() * 5);
@@ -45,6 +45,12 @@ class AbstractExample extends Component {
     }
     handleRandomize() {
         this.setState(this.generateData());
+    }
+    handleRemount() {
+        const newData = this.generateData();
+        newData.noChart = true;
+        this.setState(newData);
+        setTimeout(() => this.setState({ noChart: false }), 100);
     }
 }
 export default AbstractExample;

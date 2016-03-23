@@ -46,7 +46,7 @@ var AbstractExample = (function (_Component) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(AbstractExample)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = { data: data, data2: data2, standardDeviation: false }, _temp), _possibleConstructorReturn(_this, _ret);
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(AbstractExample)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = { data: data, data2: data2, standardDeviation: false, noChart: false }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(AbstractExample, [{
@@ -59,8 +59,8 @@ var AbstractExample = (function (_Component) {
         value: function render() {
             return _react2.default.createElement(
                 _Example2.default,
-                { title: this.title, onRandomize: this.handleRandomize.bind(this) },
-                this.renderChart()
+                { title: this.title, onRandomize: this.handleRandomize.bind(this), onRemountAndRandomize: this.handleRemount.bind(this) },
+                this.state.noChart ? 'Loading...' : this.renderChart()
             );
         }
     }, {
@@ -85,6 +85,18 @@ var AbstractExample = (function (_Component) {
         key: 'handleRandomize',
         value: function handleRandomize() {
             this.setState(this.generateData());
+        }
+    }, {
+        key: 'handleRemount',
+        value: function handleRemount() {
+            var _this2 = this;
+
+            var newData = this.generateData();
+            newData.noChart = true;
+            this.setState(newData);
+            setTimeout(function () {
+                return _this2.setState({ noChart: false });
+            }, 100);
         }
     }]);
 

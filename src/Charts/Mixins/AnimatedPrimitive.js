@@ -12,7 +12,7 @@ const AnimatedPrimitive = {
         let shouldUpdate = true;
         if (changedKeys.length) {
             const $el = d3.select(findDOMNode(this));
-            const trans = $el.transition().duration(nextProps.animationDuration);
+            const trans = $el.interrupt().transition().duration(nextProps.animationDuration);
             changedKeys.forEach(key => {
                 const val = nextProps[key];
                 trans.attr(key, val);

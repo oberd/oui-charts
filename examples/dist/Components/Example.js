@@ -43,6 +43,11 @@ var Example = (function (_Component) {
                     { onClick: this.props.onRandomize },
                     'Randomize'
                 ),
+                _react2.default.createElement(
+                    'button',
+                    { onClick: this.props.onRemountAndRandomize },
+                    'Randomize and Remount'
+                ),
                 this.props.children
             );
         }
@@ -54,6 +59,7 @@ var Example = (function (_Component) {
 Example.propTypes = {
     title: _react.PropTypes.string,
     children: _react.PropTypes.any,
-    onRandomize: _react.PropTypes.func
+    onRandomize: _react.PropTypes.func,
+    onRemountAndRandomize: _react.PropTypes.func
 };
 exports.default = Example;
