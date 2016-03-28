@@ -6,7 +6,8 @@ import AnimatedPrimitive from '../Mixins/AnimatedPrimitive';
 class Text extends Component {
     static propTypes = {
         animationDuration: PropTypes.number,
-        animationDelay: PropTypes.number
+        animationDelay: PropTypes.number,
+        dy: PropTypes.string
     }
     render() {
         return (
@@ -17,7 +18,8 @@ class Text extends Component {
         animationDuration: 1000,
         animationDelay: 0,
         fill: 'currentColor',
-        textAnchor: 'middle'
+        textAnchor: 'middle',
+        dy: '0'
     }
 }
 

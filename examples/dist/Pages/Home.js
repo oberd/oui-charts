@@ -78,6 +78,15 @@ var Home = (function (_Component) {
                             null,
                             _react2.default.createElement(
                                 _reactRouter.Link,
+                                { to: '/tick-marks' },
+                                'Tick Marks'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            _react2.default.createElement(
+                                _reactRouter.Link,
                                 { to: '/gauge' },
                                 'Gauge'
                             )

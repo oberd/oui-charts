@@ -34,6 +34,10 @@ var _Gauge = require('./Pages/Gauge');
 
 var _Gauge2 = _interopRequireDefault(_Gauge);
 
+var _TickMarks = require('./Pages/TickMarks');
+
+var _TickMarks2 = _interopRequireDefault(_TickMarks);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var routes = _react2.default.createElement(
@@ -43,6 +47,7 @@ var routes = _react2.default.createElement(
     _react2.default.createElement(_reactRouter.Route, { path: '/bar-chart', components: { main: _BarChart2.default } }),
     _react2.default.createElement(_reactRouter.Route, { path: '/line-chart', components: { main: _LineChart2.default } }),
     _react2.default.createElement(_reactRouter.Route, { path: '/bar-and-line', components: { main: _BarAndLine2.default } }),
+    _react2.default.createElement(_reactRouter.Route, { path: '/tick-marks', components: { main: _TickMarks2.default } }),
     _react2.default.createElement(_reactRouter.Route, { path: '/gauge', components: { main: _Gauge2.default } })
 );
 

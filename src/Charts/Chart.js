@@ -11,13 +11,14 @@ class Chart extends Component {
         padding: PropTypes.number,
         outerPadding: PropTypes.number,
         children: Children,
+        tickMarks: PropTypes.bool,
         hover: PropTypes.oneOfType([PropTypes.bool, PropTypes.func ])
     };
     onClick() {
         this.setState({ hover: false, activeElement: false });
     }
     getChildContext() {
-        const { padding, outerPadding } = this.props;
+        const { padding, outerPadding, tickMarks } = this.props;
         return {
             padding,
             outerPadding,
@@ -25,7 +26,8 @@ class Chart extends Component {
             setActiveElement: this.setActiveElement.bind(this),
             hasActiveElement: this.hasActiveElement.bind(this),
             isActiveElement: this.hasActiveElement.bind(this),
-            activeElement: this.state.activeElement
+            activeElement: this.state.activeElement,
+            tickMarks
         };
     }
     renderHover() {
@@ -63,7 +65,8 @@ class Chart extends Component {
         padding: 0.1,
         outerPadding: 0.1,
         width: '100%',
-        height: 400
+        height: 400,
+        tickMarks: false
     }
     static childContextTypes = {
         padding: PropTypes.number,
@@ -72,7 +75,8 @@ class Chart extends Component {
         setActiveElement: PropTypes.func,
         hasActiveElement: PropTypes.func,
         isActiveElement: PropTypes.func,
-        activeElement: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
+        activeElement: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+        tickMarks: PropTypes.bool
     }
 }
 

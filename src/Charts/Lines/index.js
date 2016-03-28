@@ -88,7 +88,8 @@ class Lines extends Component {
     };
     static contextTypes = {
         padding: PropTypes.number.isRequired,
-        outerPadding: PropTypes.number.isRequired
+        outerPadding: PropTypes.number.isRequired,
+        tickMarks: PropTypes.bool
     }
 }
 

@@ -88,21 +88,11 @@ class Bars extends Component {
         return bars;
     }
     render() {
-        const p = this.percent;
-        const contentHeight = 100 - 50 * (this.context.padding + this.context.outerPadding);
         return (
             <g>
                 {this.renderBars()}
             </g>
         );
-    }
-    buildVerticalScales() {
-        const vals = this.getValues();
-        const yExtents = this.buildYExtents();
-        const ht = d3.scale.linear().domain(this.paddedExtent(vals)).clamp(true)
-            .range(yExtents);
-        const y = ht.copy().range(yExtents.reverse());
-        return { ht, y };
     }
     static defaultProps = {
         numberFormatter: number
@@ -110,6 +100,7 @@ class Bars extends Component {
     static contextTypes = {
         padding: PropTypes.number.isRequired,
         outerPadding: PropTypes.number.isRequired,
+        tickMarks: PropTypes.bool,
         isActiveElement: PropTypes.func
     }
 }

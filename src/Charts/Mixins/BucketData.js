@@ -1,6 +1,7 @@
 
 import d3 from 'd3';
-import { values, flatten, filter, some, omit } from 'underscore';
+import { PropTypes } from 'react';
+import { values, flatten, filter, some, omit, min, max } from 'underscore';
 
 const bucketData = {
     getValidBuckets(data) {
@@ -34,7 +35,18 @@ const bucketData = {
         const { outerPadding, padding } = this.context;
         return d3.scale.ordinal()
             .domain(d3.range(bucketCount))
-            .rangeBands([0, 100], padding, outerPadding);
+            .rangeBands([this.getLeftX(), 100], padding, outerPadding);
+    },
+    getLeftX() {
+        return (this.context.tickMarks || this.props.tickMarks) ? 10 : 0;
+    },
+    buildXExtents() {
+        const { padding, outerPadding } = this.context;
+        const widthBand = d3.scale.ordinal().domain([0, 1])
+            .rangeBands([this.getLeftX(), 100], padding, outerPadding);
+        const totalWidth = widthBand.rangeBand();
+        let [minX, maxX] = widthBand.range();
+        return [this.getLeftX(), maxX - minX + totalWidth ];
     },
     buildYExtents() {
         const { padding, outerPadding } = this.context;
@@ -45,9 +57,9 @@ const bucketData = {
         return [0, maxY - minY + totalHeight ];
     },
     paddedExtent(vals) {
-        const [min, max] = d3.extent(vals);
-        const offset = Math.max(0.1, (max - min) * this.context.padding);
-        return [min - offset, max + offset];
+        const [minVal, maxVal] = d3.extent(vals);
+        const offset = Math.max(0.1, (maxVal - minVal) * this.context.padding);
+        return [minVal - offset, maxVal + offset];
     },
     percent(input) {
         return input.toString() + '%';
@@ -60,6 +72,41 @@ const bucketData = {
     getBucketAverage(bucket) {
         const vals = values(omit(bucket, (val, key) => key.match(/^_/)));
         return d3.mean(vals);
+    },
+    buildVerticalScales(tickCount = 4) {
+        const vals = this.getValues();
+        const yExtents = this.buildYExtents();
+        const ht = d3.scale.linear().domain(this.paddedExtent(vals))
+            .clamp(true)
+            .range(yExtents)
+            .nice(tickCount);
+        const y = ht.copy().range(yExtents.reverse());
+        return { ht, y };
+    },
+    getValueExtents() {
+        const vals = this.getValues();
+        return [min(vals), max(vals)];
+    },
+    getVerticalExtents() {
+        const { y } = this.buildVerticalScales();
+        const [ minVal, maxVal ] = this.getValueExtents();
+        return [ y(maxVal), y(minVal) ];
+    },
+    getTickMarks(tickCount = 4) {
+        const format = d3.format('.2f');
+        const { y } = this.buildVerticalScales();
+        return y.ticks(tickCount).map((val) => {
+            return {
+                value: val,
+                label: format(val),
+                y: y(val)
+            };
+        });
+    },
+    contextTypes: {
+        padding: PropTypes.number.isRequired,
+        outerPadding: PropTypes.number.isRequired,
+        tickMarks: PropTypes.bool
     }
 };
 
