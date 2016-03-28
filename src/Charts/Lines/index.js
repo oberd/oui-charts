@@ -1,4 +1,3 @@
-import d3 from 'd3';
 import React, { Component, PropTypes } from 'react';
 import reactMixin from 'react-mixin';
 import BucketData from '../Mixins/BucketData';
@@ -19,11 +18,7 @@ class Lines extends Component {
         };
     }
     getPointY() {
-        const vals = this.getValues();
-        const yExtents = this.buildYExtents();
-        const y = d3.scale.linear().clamp(true)
-            .domain(this.paddedExtent(vals))
-            .range(yExtents.reverse());
+        const { y } = this.buildVerticalScales();
         return y;
     }
     renderPoint(bucketIndex, seriesIndex, value, prevValue = null) {

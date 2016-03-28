@@ -58,7 +58,7 @@ const bucketData = {
     },
     paddedExtent(vals) {
         const [minVal, maxVal] = d3.extent(vals);
-        const offset = Math.max(0.1, (maxVal - minVal) * this.context.padding);
+        const offset = Math.max(0.1, (maxVal - minVal) * this.context.outerPadding);
         return [minVal - offset, maxVal + offset];
     },
     percent(input) {
@@ -73,13 +73,14 @@ const bucketData = {
         const vals = values(omit(bucket, (val, key) => key.match(/^_/)));
         return d3.mean(vals);
     },
-    buildVerticalScales(tickCount = 4) {
+    buildVerticalScales() {
         const vals = this.getValues();
         const yExtents = this.buildYExtents();
-        const ht = d3.scale.linear().domain(this.paddedExtent(vals))
+        const ht = d3.scale.linear()
+            .domain(this.paddedExtent(vals))
+            .nice()
             .clamp(true)
-            .range(yExtents)
-            .nice(tickCount);
+            .range(yExtents);
         const y = ht.copy().range(yExtents.reverse());
         return { ht, y };
     },
