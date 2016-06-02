@@ -26,7 +26,7 @@ const bucketData = {
     getValueKeys(data) {
         let dt = data || this.props.data;
         const validBuckets = this.getValidBuckets(dt);
-        return Object.keys(validBuckets[0]).filter(key => !key.match(/^_/));
+        return Object.keys(validBuckets[0] || {}).filter(key => !key.match(/^_/));
     },
     getBucketScale(data) {
         let dt = data || this.props.data;

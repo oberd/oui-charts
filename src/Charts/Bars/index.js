@@ -25,7 +25,7 @@ class Bars extends Component {
         const { outerPadding, padding } = this.context;
         const validBuckets = this.getValidBuckets();
         let deviation = this.props.standardDeviation ? this.getValidBuckets(this.props.standardDeviation) : false;
-        const valueKeys = Object.keys(validBuckets[0]).filter(key => !key.match(/^_/));
+        const valueKeys = Object.keys(validBuckets[0] || {}).filter(key => !key.match(/^_/));
         const facetCount = valueKeys.length;
         const bucketX = this.getBucketScale();
         const bucketSize = bucketX.rangeBand();

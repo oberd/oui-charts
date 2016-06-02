@@ -40,8 +40,12 @@ class Chart extends Component {
     render() {
         const { width, height, children } = this.props;
         const hover = this.renderHover();
+        let cls = styles['oui-chart'];
+        if (this.props.tickMarks) {
+            cls += ' oui-tick-marks';
+        }
         return (
-            <div className={styles['oui-chart']}>
+            <div className={cls}>
                 <svg width={width} height={height} onClick={this.onClick.bind(this)}>
                     {children}
                 </svg>
