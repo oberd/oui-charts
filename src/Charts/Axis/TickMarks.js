@@ -6,6 +6,11 @@ import Line from '../Primitives/Line';
 import Text from '../Primitives/Text';
 
 class TickMarks extends Component {
+    static propTypes = {
+        data: PropTypes.array.isRequired,
+        maxY: PropTypes.number,
+        minY: PropTypes.number
+    };
     render() {
         const p = this.percent;
         const xExtents = this.buildXExtents();

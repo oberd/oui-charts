@@ -7,6 +7,8 @@ import Circle from '../Primitives/Circle';
 class Lines extends Component {
     static propTypes = {
         data: PropTypes.array.isRequired,
+        maxY: PropTypes.number,
+        minY: PropTypes.number,
         average: PropTypes.bool,
         strokeWidth: PropTypes.number
     };

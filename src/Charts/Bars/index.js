@@ -15,6 +15,8 @@ class Bars extends Component {
         width: Size,
         height: Size,
         data: PropTypes.array.isRequired,
+        minY: PropTypes.number,
+        maxY: PropTypes.number,
         standardDeviation: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
         numberFormatter: PropTypes.func
     };

@@ -4,6 +4,20 @@ import { PropTypes } from 'react';
 import { values, flatten, filter, some, omit, min, max } from 'underscore';
 
 const bucketData = {
+    getMinY() {
+        let out;
+        if (this.props && !isNaN(this.props.minY)) {
+            out = this.props.minY;
+        }
+        return out;
+    },
+    getMaxY() {
+        let out;
+        if (this.props && !isNaN(this.props.maxY)) {
+            out = this.props.maxY;
+        }
+        return out;
+    },
     getValidBuckets(data) {
         let dt = data || this.props.data;
         const validBuckets = filter(dt, bucket =>
@@ -18,7 +32,7 @@ const bucketData = {
             let out = {};
             Object.keys(bucket)
                 .filter(k => !k.match(/^_/))
-                .forEach(k => out[k] = bucket[k]);
+                .forEach(k => { out[k] = bucket[k]; });
             return out;
         });
         return filter(flatten(valueBuckets.map(values)), val => val !== null);
@@ -56,8 +70,14 @@ const bucketData = {
         let [minY, maxY] = heightBand.range();
         return [0, maxY - minY + totalHeight ];
     },
-    paddedExtent(vals) {
-        const [minVal, maxVal] = d3.extent(vals);
+    paddedExtent(vals, minimum, maximum) {
+        let [minVal, maxVal] = d3.extent(vals);
+        if (typeof minimum !== 'undefined') {
+            minVal = minimum;
+        }
+        if (typeof maximum !== 'undefined') {
+            maxVal = maximum;
+        }
         const offset = Math.max(0.1, (maxVal - minVal) * this.context.outerPadding);
         return [minVal - offset, maxVal + offset];
     },
@@ -77,20 +97,28 @@ const bucketData = {
         const vals = this.getValues();
         const yExtents = this.buildYExtents();
         const ht = d3.scale.linear()
-            .domain(this.paddedExtent(vals))
+            .domain(this.paddedExtent(vals, this.getMinY(), this.getMaxY()))
             .nice()
             .clamp(true)
             .range(yExtents);
         const y = ht.copy().range(yExtents.reverse());
         return { ht, y };
     },
-    getValueExtents() {
+    getValueExtents(minimum, maximum) {
         const vals = this.getValues();
-        return [min(vals), max(vals)];
+        let minVal = min(vals);
+        let maxVal = max(vals);
+        if (typeof minimum !== 'undefined') {
+            minVal = minimum;
+        }
+        if (typeof maximum !== 'undefined') {
+            maxVal = maximum;
+        }
+        return [minVal, maxVal];
     },
     getVerticalExtents() {
         const { y } = this.buildVerticalScales();
-        const [ minVal, maxVal ] = this.getValueExtents();
+        const [ minVal, maxVal ] = this.getValueExtents(this.getMinY(), this.getMaxY());
         return [ y(maxVal), y(minVal) ];
     },
     getTickMarks(tickCount = 4) {
