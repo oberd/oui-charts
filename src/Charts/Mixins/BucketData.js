@@ -65,7 +65,7 @@ const bucketData = {
     buildYExtents() {
         const { padding, outerPadding } = this.context;
         const heightBand = d3.scale.ordinal().domain([0, 1])
-            .rangeBands([0, 100], padding, outerPadding);
+            .rangeBands([0, 95], padding, outerPadding);
         const totalHeight = heightBand.rangeBand();
         let [minY, maxY] = heightBand.range();
         return [0, maxY - minY + totalHeight ];

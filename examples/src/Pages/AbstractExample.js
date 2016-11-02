@@ -41,6 +41,7 @@ class AbstractExample extends Component {
             }
             newData.push(newObj);
         }
+        console.log(newData);
         return { data: newData };
     }
     handleRandomize() {

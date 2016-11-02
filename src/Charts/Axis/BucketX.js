@@ -13,7 +13,7 @@ class BucketX extends Component {
         const bucketWidth = bucketScale.rangeBand();
         const yExtents = this.buildYExtents();
         const centerOffset = bucketWidth / 2;
-        const textY = yExtents[1] + (100 - yExtents[1]) / 2;
+        const textY = 100;
         return (
             <g>
             {bucketScale.range().map((startX, i) => (

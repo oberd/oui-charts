@@ -1,10 +1,10 @@
 'use strict';
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -32,7 +32,7 @@ var data = [{ one: 1, two: 5, three: 6, four: 8 }, { one: 3, two: 4, three: 9, f
 
 var data2 = [{ one: 1, two: 5 }];
 
-var AbstractExample = (function (_Component) {
+var AbstractExample = function (_Component) {
     _inherits(AbstractExample, _Component);
 
     function AbstractExample() {
@@ -71,7 +71,7 @@ var AbstractExample = (function (_Component) {
             var maxVal = Math.random() * 40 + 10;
             var minVal = 0;
             var newData = [];
-            var newObj = undefined;
+            var newObj = void 0;
             for (var i = 0; i < count; i++) {
                 newObj = { _label: chance.word() };
                 for (var j = 0; j < keyCount; j++) {
@@ -79,6 +79,7 @@ var AbstractExample = (function (_Component) {
                 }
                 newData.push(newObj);
             }
+            console.log(newData);
             return { data: newData };
         }
     }, {
@@ -101,6 +102,6 @@ var AbstractExample = (function (_Component) {
     }]);
 
     return AbstractExample;
-})(_react.Component);
+}(_react.Component);
 
 exports.default = AbstractExample;

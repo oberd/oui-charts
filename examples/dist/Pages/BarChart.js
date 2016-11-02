@@ -1,10 +1,10 @@
 'use strict';
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -30,7 +30,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var chance = new _chance2.default('hi');
 
-var BarChart = (function (_AbstractExample) {
+var BarChart = function (_AbstractExample) {
     _inherits(BarChart, _AbstractExample);
 
     function BarChart() {
@@ -49,8 +49,8 @@ var BarChart = (function (_AbstractExample) {
             var minVal = 0;
             var newData = [];
             var newDeviation = [];
-            var newObj = undefined;
-            var newDev = undefined;
+            var newObj = void 0;
+            var newDev = void 0;
             for (var i = 0; i < count; i++) {
                 newObj = { _label: chance.word() };
                 newDev = { _label: chance.word() };
@@ -85,6 +85,6 @@ var BarChart = (function (_AbstractExample) {
     }]);
 
     return BarChart;
-})(_AbstractExample3.default);
+}(_AbstractExample3.default);
 
 exports.default = BarChart;

@@ -7,6 +7,7 @@ export Bars from './Charts/Bars';
 export Lines from './Charts/Lines';
 export Legend from './Charts/Legend';
 export BucketX from './Charts/Axis/BucketX';
+export LabelY from './Charts/Axis/LabelY';
 export TickMarks from './Charts/Axis/TickMarks';
 export Gauge from './Charts/Gauge';
 

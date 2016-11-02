@@ -42,23 +42,25 @@ var app = (0, _koa2.default)();
 
 function react(location) {
     return regeneratorRuntime.wrap(function react$(_context) {
-        while (1) switch (_context.prev = _context.next) {
-            case 0:
-                return _context.abrupt('return', new Promise(function (resolve) {
-                    (0, _reactRouter.match)({ routes: _routes2.default, location: location }, function (error, redirectLocation, renderProps) {
-                        if (error || !renderProps) {
-                            resolve(false);
-                        } else {
-                            var content = '<!doctype html>';
-                            content += (0, _server.renderToString)(_react2.default.createElement(_reactRouter.RoutingContext, renderProps));
-                            resolve(content);
-                        }
-                    });
-                }));
+        while (1) {
+            switch (_context.prev = _context.next) {
+                case 0:
+                    return _context.abrupt('return', new Promise(function (resolve) {
+                        (0, _reactRouter.match)({ routes: _routes2.default, location: location }, function (error, redirectLocation, renderProps) {
+                            if (error || !renderProps) {
+                                resolve(false);
+                            } else {
+                                var content = '<!doctype html>';
+                                content += (0, _server.renderToString)(_react2.default.createElement(_reactRouter.RoutingContext, renderProps));
+                                resolve(content);
+                            }
+                        });
+                    }));
 
-            case 1:
-            case 'end':
-                return _context.stop();
+                case 1:
+                case 'end':
+                    return _context.stop();
+            }
         }
     }, _marked[0], this);
 }
