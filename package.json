@@ -1,6 +1,6 @@
 {
   "name": "@oberd/oui-charts",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Charting library for charts and graphs in Oberd",
   "main": "dist/Charts.js",
   "dependencies": {
