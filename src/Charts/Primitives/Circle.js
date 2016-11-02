@@ -2,6 +2,7 @@
 import React, { Component, PropTypes } from 'react';
 import reactMixin from 'react-mixin';
 import AnimatedPrimitive from '../Mixins/AnimatedPrimitive';
+import { omit } from 'underscore';
 
 class Circle extends Component {
     static propTypes = {
@@ -9,8 +10,9 @@ class Circle extends Component {
         animationDelay: PropTypes.number
     };
     render() {
+        const okProps = omit(this.props, ['animationDuration', 'animationDelay', 'hoverKey', 'hoverData']);
         return (
-            <circle {...this.props} />
+            <circle {...okProps} />
         );
     }
     static defaultProps = {

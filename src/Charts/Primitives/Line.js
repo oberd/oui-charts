@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import reactMixin from 'react-mixin';
 import AnimatedPrimitive from '../Mixins/AnimatedPrimitive';
 import Hoverable from '../Mixins/Hoverable';
+import { omit } from 'underscore';
 
 class Line extends Component {
     static propTypes = {
@@ -11,8 +12,9 @@ class Line extends Component {
     };
     render() {
         const props = { ...this.props, opacity: this.getOpacity() };
+        const okProps = omit(props, ['animationDuration', 'animationDelay', 'hoverKey', 'hoverData']);
         return (
-            <line {...this.hoverableEvents()} {...props} />
+            <line {...this.hoverableEvents()} {...okProps} />
         );
     }
     static defaultProps = {

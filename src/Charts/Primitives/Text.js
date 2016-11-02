@@ -2,6 +2,7 @@
 import React, { Component, PropTypes } from 'react';
 import reactMixin from 'react-mixin';
 import AnimatedPrimitive from '../Mixins/AnimatedPrimitive';
+import { omit } from 'underscore';
 
 class Text extends Component {
     static propTypes = {
@@ -10,8 +11,9 @@ class Text extends Component {
         dy: PropTypes.string
     }
     render() {
+        const okProps = omit(this.props, ['animationDuration', 'animationDelay', 'hoverKey', 'hoverData']);
         return (
-            <text {...this.props} />
+            <text {...okProps} />
         );
     }
     static defaultProps = {
