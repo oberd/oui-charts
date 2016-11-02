@@ -5,7 +5,7 @@
   "main": "dist/Charts.js",
   "dependencies": {
     "chance": "^1.0.3",
-    "d3": "^4.2.6",
+    "d3": "^3.5.17",
     "numeral": "^1.5.3",
     "react-addons-transition-group": "^15.1.0",
     "react-mixin": "^3.0.3",
