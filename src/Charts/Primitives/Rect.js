@@ -5,6 +5,7 @@ import { findDOMNode } from 'react-dom';
 import reactMixin from 'react-mixin';
 import AnimatedPrimitive from '../Mixins/AnimatedPrimitive';
 import Hoverable from '../Mixins/Hoverable';
+import { omit } from 'underscore';
 
 class Rect extends Component {
     static propTypes = {
@@ -26,8 +27,9 @@ class Rect extends Component {
     }
     render() {
         const props = { ...this.props, opacity: this.getOpacity() };
+        const okProps = omit(props, ['animationDuration', 'animationDelay', 'hoverKey', 'hoverData']);
         return (
-            <rect {...this.hoverableEvents()} {...props} />
+            <rect {...this.hoverableEvents()} {...okProps} />
         );
     }
     static defaultProps = {
