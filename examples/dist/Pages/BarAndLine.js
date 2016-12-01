@@ -30,7 +30,7 @@ var BarAndLine = function (_AbstractExample) {
     function BarAndLine() {
         _classCallCheck(this, BarAndLine);
 
-        return _possibleConstructorReturn(this, Object.getPrototypeOf(BarAndLine).apply(this, arguments));
+        return _possibleConstructorReturn(this, (BarAndLine.__proto__ || Object.getPrototypeOf(BarAndLine)).apply(this, arguments));
     }
 
     _createClass(BarAndLine, [{

@@ -13,7 +13,7 @@ class BucketX extends Component {
         const bucketWidth = bucketScale.rangeBand();
         const yExtents = this.buildYExtents();
         const centerOffset = bucketWidth / 2;
-        const textY = 100;
+        const textY = yExtents[1] + (16 / (this.context.clientHeight || 400)) * 100;
         return (
             <g>
             {bucketScale.range().map((startX, i) => (
@@ -32,6 +32,7 @@ class BucketX extends Component {
     static contextTypes = {
         padding: PropTypes.number.isRequired,
         outerPadding: PropTypes.number.isRequired,
+        clientHeight: PropTypes.number,
         tickMarks: PropTypes.bool.isRequired
     }
 }

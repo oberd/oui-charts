@@ -24,7 +24,7 @@ var Example = function (_Component) {
     function Example() {
         _classCallCheck(this, Example);
 
-        return _possibleConstructorReturn(this, Object.getPrototypeOf(Example).apply(this, arguments));
+        return _possibleConstructorReturn(this, (Example.__proto__ || Object.getPrototypeOf(Example)).apply(this, arguments));
     }
 
     _createClass(Example, [{

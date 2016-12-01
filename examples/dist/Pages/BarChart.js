@@ -36,7 +36,7 @@ var BarChart = function (_AbstractExample) {
     function BarChart() {
         _classCallCheck(this, BarChart);
 
-        return _possibleConstructorReturn(this, Object.getPrototypeOf(BarChart).apply(this, arguments));
+        return _possibleConstructorReturn(this, (BarChart.__proto__ || Object.getPrototypeOf(BarChart)).apply(this, arguments));
     }
 
     _createClass(BarChart, [{

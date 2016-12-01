@@ -1,6 +1,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import { Size, Children } from '../PropTypes';
+import Measure from 'react-measure';
 import Hover from './Hover';
 import styles from './Chart.css';
 
@@ -12,7 +13,8 @@ class Chart extends Component {
         outerPadding: PropTypes.number,
         children: Children,
         tickMarks: PropTypes.bool,
-        hover: PropTypes.oneOfType([PropTypes.bool, PropTypes.func ])
+        hover: PropTypes.oneOfType([PropTypes.bool, PropTypes.func ]),
+        onClickElement: PropTypes.func
     };
     onClick() {
         this.setState({ hover: false, activeElement: false });
@@ -27,6 +29,8 @@ class Chart extends Component {
             hasActiveElement: this.hasActiveElement.bind(this),
             isActiveElement: this.hasActiveElement.bind(this),
             activeElement: this.state.activeElement,
+            clientWidth: this.state.width,
+            clientHeight: this.state.height,
             tickMarks
         };
     }
@@ -45,12 +49,14 @@ class Chart extends Component {
             cls += ' oui-tick-marks';
         }
         return (
-            <div className={cls}>
-                <svg width={width} height={height} onClick={this.onClick.bind(this)}>
-                    {children}
-                </svg>
-                {hover}
-            </div>
+            <Measure onMeasure={this.updateDimensions}>
+                <div className={cls}>
+                    <svg width={width} height={height} onClick={this.onClick.bind(this)}>
+                        {children}
+                    </svg>
+                    {hover}
+                </div>
+            </Measure>
         );
     }
     setHoverState(data) {
@@ -60,9 +66,15 @@ class Chart extends Component {
     }
     setActiveElement(hoverKey, data) {
         this.setState({ hover: data, activeElement: hoverKey });
+        if (this.props.onClickElement) {
+            this.props.onClickElement(hoverKey, data);
+        }
     }
     hasActiveElement() {
         return !!this.state.activeElement;
+    }
+    updateDimensions = dimensions => {
+        this.setState({ ...dimensions });
     }
     state = { hover: false, activeElement: false };
     static defaultProps = {
@@ -80,6 +92,8 @@ class Chart extends Component {
         hasActiveElement: PropTypes.func,
         isActiveElement: PropTypes.func,
         activeElement: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+        clientWidth: PropTypes.number,
+        clientHeight: PropTypes.number,
         tickMarks: PropTypes.bool
     }
 }
