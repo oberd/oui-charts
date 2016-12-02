@@ -1,5 +1,5 @@
 {
-  "name": "@oberd/oui-charts",
+  "name": "oui-charts",
   "version": "3.0.0",
   "description": "Charting library for charts and graphs in Oberd",
   "main": "dist/Charts.js",
