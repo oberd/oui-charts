@@ -50,7 +50,6 @@
     "mocha": "^3.1.0",
     "myth": "^1.5.0",
     "nodemon": "^1.5.1",
-    "object-assign-deep": "git+https://github.com/nnnnathann/Object-Assign-Deep.git#847a73bd1a1eb30c9dc72f646fbab49e237cb745",
     "postcss-calc": "^5.0.0",
     "postcss-color-function": "^2.0.0",
     "postcss-color-hex-alpha": "^2.0.0",
